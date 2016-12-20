@@ -18,6 +18,7 @@ require('bootstrap-sass');
 
 window.Vue = require('vue/dist/vue.js');
 Vue.use(require('vue-resource'));
+Vue.use(require('vue-sortable'));
 
 /**
  * We'll register a HTTP interceptor to attach the "CSRF" header to each of
@@ -27,7 +28,6 @@ Vue.use(require('vue-resource'));
 
 Vue.http.interceptors.push((request, next) => {
     request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
-
     next();
 });
 

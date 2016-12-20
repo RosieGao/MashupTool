@@ -19,4 +19,14 @@ elixir(mix => {
         .sass('app.scss')
         .browserify('app.js')
         .webpack('app.js');
+
+    mix.styles([
+        "animate.css",
+        "font-awesome.css",
+        "app.css"
+    ]);
+
+    mix.copy(
+            'node_modules/bootstrap-sass/assets/fonts/bootstrap/',
+            'public/fonts/bootstrap/');
 });
