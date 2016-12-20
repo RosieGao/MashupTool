@@ -13,12 +13,12 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-// Vue.component('example', require('./components/Example.vue'));
+import index from './components/index.vue';
 
 const app = new Vue({
     el: '#app',
 
-    data: {
-        message: 'Hello Rosie!'
+    components: {
+        index
     }
 });
