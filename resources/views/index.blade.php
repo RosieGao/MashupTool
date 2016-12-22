@@ -7,7 +7,7 @@
     <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid row">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -32,29 +32,33 @@
                             Clear
                         </button>
                     </div>
-                    <div class="btn-group canvas">
-                        <canvas></canvas>
-                        <canvas></canvas>
-                        <canvas></canvas>
-                        <canvas></canvas>
-                    </div>
+                    {{--<div class="btn-group canvasSelector">--}}
+                    {{--<canvas></canvas>--}}
+                    {{--<canvas></canvas>--}}
+                    {{--<canvas></canvas>--}}
+                    {{--<canvas></canvas>--}}
+                    {{--</div>--}}
                 </ul>
             </div>
         </nav>
     </div>
     <div class="container-fluid">
-        <div class="leftPanelContainer">
-            <nav class="navbar navbar-default navbar-side" role="navigation">
-                <ul class="nav">
-                    <catagory></catagory>
-                    <catagory></catagory>
-                    <catagory></catagory>
-                    <catagory></catagory>
-                </ul>
-            </nav>
-        </div>
-        <div class="canvasContainer">
-            <div class="content ui-sortable">
+        <div class="row">
+            <div class="leftPanelContainer col-md-3">
+                <nav class="navbar navbar-default navbar-side" style="height: 100%;" role="leftPanel">
+                    <ul class="nav">
+                        {{"Here is left panel"}}
+                        {{--<catagory></catagory>--}}
+                        {{--<catagory></catagory>--}}
+                        {{--<catagory></catagory>--}}
+                        {{--<catagory></catagory>--}}
+                    </ul>
+                </nav>
+            </div>
+            <div class="canvasContainer col-md-9 col-sm-offset-3">
+                <div class="canvas ui-sortable">
+                    {{"Here is canvas"}}
+                </div>
             </div>
         </div>
     </div>
