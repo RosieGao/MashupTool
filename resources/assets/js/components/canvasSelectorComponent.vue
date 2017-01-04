@@ -15,6 +15,7 @@
         <button class="btn btn-default navbar-btn" v-on:click="changeCanvasSize('xsSize')">
             <i class="fa fa-mobile-phone"></i>
         </button>
+        <pre>{{ $data | json}}</pre>
     </div>
 </template>
 
@@ -33,7 +34,7 @@
         },
         methods: {
             changeCanvasSize: function(canvas_size){
-                this.canvas_size = canvas_size;
+                this.canvas_size = canvas_size
             },
         },
     }
