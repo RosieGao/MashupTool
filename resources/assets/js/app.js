@@ -13,12 +13,18 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-import index from './components/index.vue';
+import {store} from './store/store.js'
+
+import canvas_selector_component from './components/canvasSelectorComponent.vue';
+import canvas_component from './components/canvasComponent.vue';
 
 const app = new Vue({
     el: '#app',
 
+    store,
+
     components: {
-        index
+        canvas_selector_component,
+        canvas_component
     }
 });

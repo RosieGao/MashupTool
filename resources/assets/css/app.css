@@ -1,18 +1,28 @@
-.canvasSelector{
-    margin-left: 15px;
+body{
+    overflow-x: hidden;
 }
 .leftPanelContainer{
     position: fixed;
     top: 80px;
     bottom: 0px;
 }
+.leftPanel{
+    height: 100%;
+}
 .canvasContainer{
     position: fixed;
     top: 80px;
     bottom: 0px;
 }
-.canvas{
-    border: 1px solid #DDDDDD;
-    border-radius: 4px;
-    height: 100%;
+.lgSize{
+    width: 1170px;
+}
+.mdSize{
+    width: 970px;
+}
+.smSize{
+    width: 750px;
+}
+.xsSize{
+    width: 500px;
 }

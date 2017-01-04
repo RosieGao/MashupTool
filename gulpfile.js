@@ -22,7 +22,6 @@ elixir(mix => {
 
     mix.styles([
         "animate.css",
-        "font-awesome.css",
         "app.css"
     ]);
 

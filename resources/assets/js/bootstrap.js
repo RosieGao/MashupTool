@@ -1,4 +1,3 @@
-
 window._ = require('lodash');
 
 /**
@@ -17,8 +16,12 @@ require('bootstrap-sass');
  */
 
 window.Vue = require('vue/dist/vue.js');
+
 Vue.use(require('vue-resource'));
 Vue.use(require('vue-sortable'));
+
+window.Vuex = require('vuex/dist/vuex.js');
+Vue.use(Vuex);
 
 /**
  * We'll register a HTTP interceptor to attach the "CSRF" header to each of
@@ -43,4 +46,3 @@ window.Echo = new Echo({
     broadcaster: 'pusher',
     key: 'your-pusher-key'
 });
-
