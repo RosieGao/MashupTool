@@ -1,5 +1,5 @@
 <template>
-    <div class="canvas ui-sortable" v-bind:class="store.state.canvas_size">
+    <div class="canvas ui-sortable">
         {{"Here is canvas"}}
         <pre>{{ $data | json}}</pre>
     </div>

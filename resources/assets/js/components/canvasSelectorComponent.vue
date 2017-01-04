@@ -32,8 +32,8 @@
             }
         },
         methods: {
-            changeCanvasSize: function(size){
-                this.canvas_size = size;
+            changeCanvasSize: function(canvas_size){
+                this.canvas_size = canvas_size;
             },
         },
     }
