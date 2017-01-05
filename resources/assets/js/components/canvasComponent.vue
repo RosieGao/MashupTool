@@ -1,7 +1,9 @@
 <template>
     <div class="canvas ui-sortable">
+        <button class="btn btn-default navbar-btn">
+        </button>
         {{"Here is canvas"}}
-        <pre>{{ $data | json}}</pre>
+        {{ size }}
     </div>
 </template>
 
@@ -17,8 +19,8 @@
     export default{
         data(){
             return{
-                canvas_size: '',
             }
         },
+        props: ['size'],
     }
 </script>

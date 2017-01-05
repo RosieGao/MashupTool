@@ -34,7 +34,7 @@
                                 Clear
                             </button>
                         </div>
-                        <canvas_selector_component></canvas_selector_component>
+                        <canvas_selector_component v-bind:canvas_size="canvasSize"></canvas_selector_component>
                     </ul>
                 </div>
             </nav>
@@ -53,7 +53,8 @@
                     </nav>
                 </div>
                 <div class="canvasContainer col-md-9 col-sm-offset-3">
-                    <canvas_component></canvas_component>
+                    <pre>@{{ $data | json }}}</pre>
+                    {{--<canvas_component :size="canvas_size"></canvas_component>--}}
                 </div>
             </div>
         </div>

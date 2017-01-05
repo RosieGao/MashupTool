@@ -15,7 +15,7 @@
         <button class="btn btn-default navbar-btn" v-on:click="changeCanvasSize('xsSize')">
             <i class="fa fa-mobile-phone"></i>
         </button>
-        <pre>{{ $data | json}}</pre>
+        {{ size }}
     </div>
 </template>
 
@@ -26,15 +26,18 @@
 </style>
 
 <script>
+    import Hub from './events/hub.js';
     export default{
         data(){
             return{
-                canvas_size: '',
             }
         },
+
+        props: ['canvas_size'],
+
         methods: {
-            changeCanvasSize: function(canvas_size){
-                this.canvas_size = canvas_size
+            changeCanvasSize: function(size){
+                Hub.$emit('changeCanvasSize', size);
             },
         },
     }
