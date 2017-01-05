@@ -53,8 +53,7 @@
                     </nav>
                 </div>
                 <div class="canvasContainer col-md-9 col-sm-offset-3">
-                    <pre>@{{ $data | json }}}</pre>
-                    {{--<canvas_component></canvas_component>--}}
+                    <canvas_component></canvas_component>
                 </div>
             </div>
         </div>

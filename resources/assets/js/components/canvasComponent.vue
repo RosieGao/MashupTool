@@ -1,9 +1,7 @@
 <template>
     <div class="canvas ui-sortable">
-        <button class="btn btn-default navbar-btn">
-        </button>
-        {{"Here is canvas"}}
-        {{ size }}
+        <div>{{"Here is canvas"}}</div>
+        <div>{{ size }}</div>
     </div>
 </template>
 
@@ -16,11 +14,17 @@
 </style>
 
 <script>
+    import store from '../vuex/store';
     export default{
         data(){
             return{
             }
         },
-        props: ['size'],
+
+        computed: {
+            size() {
+                return store.state.size
+            }
+        },
     }
 </script>

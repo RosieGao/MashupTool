@@ -6,16 +6,28 @@ Vue.use(Vuex);
 Vue.config.debug = true
 
 const state = {
-    canvasSize: 'origin'
+    size: '',
+};
+
+const getters = {
+
 };
 
 const mutations = {
-    CHANGE_CANVAS_SIZE(state, canvas_size){
-        state.canvasSize = canvas_size
+    CHANGE_CANVAS_SIZE(state, size){
+        state.size = size
+    }
+};
+
+const actions = {
+    changeCanvasSize ({ commit }, size) {
+        commit('CHANGE_CANVAS_SIZE', size)
     }
 };
 
 export default new Vuex.Store({
     state,
+    getters,
     mutations,
+    actions
 })
