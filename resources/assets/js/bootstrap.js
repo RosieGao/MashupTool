@@ -20,9 +20,6 @@ window.Vue = require('vue/dist/vue.js');
 Vue.use(require('vue-resource'));
 Vue.use(require('vue-sortable'));
 
-window.Vuex = require('vuex/dist/vuex.js');
-Vue.use(Vuex);
-
 /**
  * We'll register a HTTP interceptor to attach the "CSRF" header to each of
  * the outgoing requests issued by this application. The CSRF middleware

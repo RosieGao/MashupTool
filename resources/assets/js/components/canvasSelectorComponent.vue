@@ -1,21 +1,21 @@
 <template>
     <div class="btn-group canvasSelector">
-        <button class="btn btn-default navbar-btn" v-on:click="changeCanvasSize('defaultSize')">
+        <button class="btn btn-default navbar-btn" >
             <i class="fa fa-arrows-alt"></i>
         </button>
-        <button class="btn btn-default navbar-btn" v-on:click="changeCanvasSize('lgSize')">
+        <button class="btn btn-default navbar-btn" >
             <i class="fa fa-desktop"></i>
         </button>
-        <button class="btn btn-default navbar-btn" v-on:click="changeCanvasSize('mdSize')">
+        <button class="btn btn-default navbar-btn" >
             <i class="fa fa-laptop"></i>
         </button>
-        <button class="btn btn-default navbar-btn" v-on:click="changeCanvasSize('smSize')">
+        <button class="btn btn-default navbar-btn" >
             <i class="fa fa-tablet"></i>
         </button>
-        <button class="btn btn-default navbar-btn" v-on:click="changeCanvasSize('xsSize')">
+        <button class="btn btn-default navbar-btn" >
             <i class="fa fa-mobile-phone"></i>
+            {{canvasSize}}
         </button>
-        {{ size }}
     </div>
 </template>
 
@@ -26,19 +26,21 @@
 </style>
 
 <script>
-    import Hub from './events/hub.js';
+    import store from '../vuex/store';
+    import {changeCanvasSize} from '../vuex/actions';
     export default{
         data(){
             return{
             }
         },
 
-        props: ['canvas_size'],
-
-        methods: {
-            changeCanvasSize: function(size){
-                Hub.$emit('changeCanvasSize', size);
+        vuex: {
+            getters: {
+                canvasSize: state => store.state.canvasSize
             },
-        },
+            actions: {
+                changeCanvasSize
+            }
+        }
     }
 </script>

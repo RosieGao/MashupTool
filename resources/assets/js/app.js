@@ -13,26 +13,12 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-import canvas_selector_component from './components/canvasSelectorComponent.vue';
-import canvas_component from './components/canvasComponent.vue';
+import store from './vuex/store';
 
-import Hub from './events/hub.js';
+Vue.component('canvas_selector_component', require('./components/canvasSelectorComponent.vue'));
+Vue.component('canvas_component', require('./components/canvasComponent.vue'));
 
 const app = new Vue({
     el: '#app',
-
-    components: {
-        canvas_selector_component,
-        canvas_component
-    },
-
-    data: {
-        canvasSize: '',
-    },
-
-    mounted() {
-        Hub.$on('changeCanvasSize', function(size){
-            this.canvasSize = size
-        })
-    }
+    store
 });

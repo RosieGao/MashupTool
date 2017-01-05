@@ -17,7 +17,6 @@ require('laravel-elixir-webpack-official');
 elixir(mix => {
     mix
         .sass('app.scss')
-        .browserify('app.js')
         .webpack('app.js');
 
     mix.styles([
