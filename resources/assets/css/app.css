@@ -6,9 +6,6 @@ body{
     top: 80px;
     bottom: 0px;
 }
-.leftPanel{
-    height: 100%;
-}
 .canvasContainer{
     position: fixed;
     top: 80px;

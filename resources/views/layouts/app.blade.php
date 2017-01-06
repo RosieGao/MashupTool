@@ -41,18 +41,10 @@
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="leftPanelContainer col-md-3">
-                    <nav class="leftPanel navbar navbar-default navbar-side">
-                        <ul class="nav">
-                            {{"Here is left panel"}}
-                            {{--<catagory></catagory>--}}
-                            {{--<catagory></catagory>--}}
-                            {{--<catagory></catagory>--}}
-                            {{--<catagory></catagory>--}}
-                        </ul>
-                    </nav>
+                <div class="leftPanelContainer col-md-2">
+                    <left_panel_component></left_panel_component>
                 </div>
-                <div class="canvasContainer col-md-9 col-sm-offset-3">
+                <div class="canvasContainer col-md-10 col-sm-offset-2">
                     <canvas_component></canvas_component>
                 </div>
             </div>

@@ -15,10 +15,23 @@ require('./bootstrap');
 
 import store from './vuex/store';
 
-Vue.component('canvas_selector_component', require('./components/canvasSelectorComponent.vue'));
-Vue.component('canvas_component', require('./components/canvasComponent.vue'));
+import canvas_selector_component from './components/canvasSelectorComponent.vue';
+import canvas_component from './components/canvasComponent.vue';
+import left_panel_component from './components/leftpanel/leftPanelComponent.vue';
 
 const app = new Vue({
     el: '#app',
-    store
+
+    store,
+
+    data() {
+        return {
+        }
+    },
+
+    components:{
+        canvas_selector_component,
+        canvas_component,
+        left_panel_component
+    },
 });

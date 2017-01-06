@@ -1,7 +1,7 @@
 <template>
     <div class="canvas ui-sortable">
         <div>{{"Here is canvas"}}</div>
-        <div>{{ size }}</div>
+        <div>{{size}}</div>
     </div>
 </template>
 

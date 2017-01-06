@@ -6,11 +6,7 @@ Vue.use(Vuex);
 Vue.config.debug = true
 
 const state = {
-    size: '',
-};
-
-const getters = {
-
+    size: 'default canvas size',
 };
 
 const mutations = {
@@ -27,7 +23,6 @@ const actions = {
 
 export default new Vuex.Store({
     state,
-    getters,
     mutations,
     actions
 })

@@ -35,7 +35,6 @@
         methods: {
             changeCanvasSize: function(selected_size){
                 store.dispatch('changeCanvasSize', selected_size)
-                console.log(store.state.size)
             }
         }
     }

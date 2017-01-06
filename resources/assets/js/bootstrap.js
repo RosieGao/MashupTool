@@ -15,7 +15,7 @@ require('bootstrap-sass');
  * and simple, leaving you to focus on building your next great project.
  */
 
-window.Vue = require('vue/dist/vue.js');
+window.Vue = require('vue/dist/vue.common.js');
 
 Vue.use(require('vue-resource'));
 Vue.use(require('vue-sortable'));
