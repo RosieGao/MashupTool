@@ -5,7 +5,7 @@
                 <a role="button" data-toggle="collapse" href="#gridSystem" aria-expanded="true" aria-controls="gridSystem">
                     <span>Grid System</span>
                 </a>
-                <ul class="collapse in" id="gridSystem">
+                <ul class="collapse in">
                     <grid_system_component></grid_system_component>
                     <grid_system_component></grid_system_component>
                     <grid_system_component></grid_system_component>

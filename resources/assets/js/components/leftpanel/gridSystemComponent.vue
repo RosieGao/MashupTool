@@ -1,7 +1,7 @@
 <template>
-    <div class="gridSystem">
-        <a href="#close" v-show="removeButtonShow"><i class="fa fa-times"></i></a>
-        <a href="#close" v-show="dragButtonShow"><i class="fa fa-arrows"></i></a>
+    <div class="gridSystem ui-draggable ">
+        <a href="#close" class="removeButton" v-show="removeButtonShow"><i class="fa fa-times"></i></a>
+        <a href="#close" class="dragButton" v-show="dragButtonShow"><i class="fa fa-arrows"></i></a>
         <span v-show="propertiesShow">
             <form class="form-inline">
                 <div class="form-group">
@@ -19,7 +19,7 @@
                 <div class="column ui-sortable col-xs-12 columndef12">
                 </div>
             </div>
-        </div>
+        </div>s
     </div>
 </template>
 
@@ -37,6 +37,20 @@
         background-repeat: no-repeat;
         padding: 10px 20px 10px;
         overflow: hidden;
+    }
+    .canvas .row{
+        background-color: #F5F5F5;
+        border: 1px solid #DDDDDD;
+        border-radius: 4px 0 4px 0;
+        color: #9DA0A4;
+        content: "Row";
+        font-size: 12px;
+        font-weight: bold;
+        left: -1px;
+        line-height: 2;
+        padding: 1px 5px;
+        position: absolute;
+        top: -1px;
     }
 </style>
 
