@@ -17,7 +17,10 @@ require('laravel-elixir-webpack-official');
 elixir(mix => {
     mix
         .sass('app.scss')
-        .webpack('app.js');
+        .webpack('app.js')
+        .scripts([
+            '/controller/dragdrop.js',
+    ]);
 
     mix.styles([
         "animate.css",

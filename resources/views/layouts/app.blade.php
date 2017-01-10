@@ -51,5 +51,7 @@
         </div>
     </div>
     <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/all.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/jquery-ui.min.js') }}"></script>
 </body>
 </html>

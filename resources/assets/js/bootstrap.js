@@ -18,7 +18,6 @@ require('bootstrap-sass');
 window.Vue = require('vue/dist/vue.common.js');
 
 Vue.use(require('vue-resource'));
-Vue.use(require('vue-sortable'));
 
 /**
  * We'll register a HTTP interceptor to attach the "CSRF" header to each of

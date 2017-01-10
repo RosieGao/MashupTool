@@ -1,16 +1,16 @@
 <template>
-    <div class="leftPanel navbar navbar-default navbar-side">
+    <div class="leftPanel navbar navbar-default">
         <ul class="nav">
             <li>
-                <a role="button" data-toggle="collapse" href="#gridSystem" aria-expanded="true" aria-controls="gridSystem">
+                <a role="button" data-toggle="collapse" href="#gridCollection" aria-expanded="true" aria-controls="gridCollection">
                     <span>Grid System</span>
                 </a>
-                <ul class="collapse in">
-                    <grid_system_component></grid_system_component>
-                    <grid_system_component></grid_system_component>
-                    <grid_system_component></grid_system_component>
-                    <grid_system_component></grid_system_component>
-                    <grid_system_component></grid_system_component>
+                <ul id="gridCollection" class="collapse in">
+                    <one_column_grid_component></one_column_grid_component>
+                    <two_column_grid_component></two_column_grid_component>
+                    <three_column_grid_component></three_column_grid_component>
+                    <four_column_grid_component></four_column_grid_component>
+                    <customize_grid_component></customize_grid_component>
                 </ul>
             </li>
             <li>
@@ -66,14 +66,19 @@
 <style>
     .leftPanel{
         height: 100%;
+        overflow-x: hidden;
     }
-    #gridSystem, #components, #animation{
+    #gridCollection, #components, #animation{
         padding: 0;
     }
 </style>
 
 <script>
-    import grid_system_component from './gridSystemComponent.vue';
+    import one_column_grid_component from './gridsystem/oneColumnGridComponent.vue';
+    import two_column_grid_component from './gridsystem/twoColumnGridComponent.vue';
+    import three_column_grid_component from './gridsystem/threeColumnGridComponent.vue';
+    import four_column_grid_component from './gridsystem/fourColumnGridComponent.vue';
+    import customize_grid_component from './gridsystem/customizeGridComponent.vue';
     import heading_component from './components/headingComponent.vue';
     import paragraph_component from './components/paragraphComponent.vue';
     import table_component from './components/tableComponent.vue';
@@ -113,7 +118,11 @@
             }
         },
         components:{
-            grid_system_component,
+            one_column_grid_component,
+            two_column_grid_component,
+            three_column_grid_component,
+            four_column_grid_component,
+            customize_grid_component,
             heading_component,
             paragraph_component,
             table_component,

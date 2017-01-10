@@ -1,5 +1,5 @@
 <template>
-    <div class="canvas ui-sortable ">
+    <div class="canvas">
     </div>
 </template>
 
@@ -13,9 +13,15 @@
 
 <script>
     import store from '../vuex/store';
+
     export default{
         data(){
             return{
+                removeButtonShow: false,
+                dragButtonShow: false,
+                propertiesShow: false,
+                previewShow: false,
+                viewShow: true,
             }
         },
 
