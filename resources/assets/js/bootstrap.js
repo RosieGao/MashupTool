@@ -1,4 +1,3 @@
-
 window._ = require('lodash');
 
 /**
@@ -16,7 +15,8 @@ require('bootstrap-sass');
  * and simple, leaving you to focus on building your next great project.
  */
 
-window.Vue = require('vue/dist/vue.js');
+window.Vue = require('vue/dist/vue.common.js');
+
 Vue.use(require('vue-resource'));
 
 /**
@@ -27,7 +27,6 @@ Vue.use(require('vue-resource'));
 
 Vue.http.interceptors.push((request, next) => {
     request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
-
     next();
 });
 
@@ -43,4 +42,3 @@ window.Echo = new Echo({
     broadcaster: 'pusher',
     key: 'your-pusher-key'
 });
-

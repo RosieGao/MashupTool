@@ -17,6 +17,17 @@ require('laravel-elixir-webpack-official');
 elixir(mix => {
     mix
         .sass('app.scss')
-        .browserify('app.js')
-        .webpack('app.js');
+        .webpack('app.js')
+        .scripts([
+            '/controller/dragdrop.js',
+    ]);
+
+    mix.styles([
+        "animate.css",
+        "app.css"
+    ]);
+
+    mix.copy(
+            'node_modules/bootstrap-sass/assets/fonts/bootstrap/',
+            'public/fonts/bootstrap/');
 });
