@@ -7,7 +7,7 @@
             <span>Images</span>
         </div>
         <div class="view">
-            <img id="responsiveimage" src="/images/rsponsiveimage1.png" class="img-responsive" alt="Responsive image">
+            <img id="responsiveimage" src="/images/responsiveimage1.png" class="img-responsive" alt="Responsive image">
         </div>
     </div>
 </template>
