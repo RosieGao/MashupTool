@@ -1,13 +1,13 @@
 <template>
     <div class="gridSystem">
-        <a href="#close" class="removeButton" v-show="removeButtonShow"><i class="fa fa-times"></i></a>
-        <a href="#close" class="dragButton" v-show="dragButtonShow"><i class="fa fa-arrows"></i></a>
-        <div class="preview" v-show="previewShow">
+        <span href="#close" class="removeButton"><i class="fa fa-times"></i></span>
+        <span href="#close" class="dragButton"><i class="fa fa-arrows"></i></span>
+        <div class="preview">
             <img src="/images/threecolumns.png">
-            <a href="#">Three Columns</a>
+            <span>Three Columns</span>
             <input type="text" class="form-control property" placeholder="4 4 4">
         </div>
-        <div class="view" v-show="viewShow">
+        <div class="view">
             <div class="row">
                 <div class="column col-xs-4 columndef4">
                 </div>
@@ -21,20 +21,6 @@
 </template>
 
 <style>
-    .gridSystem{
-        display: inline-block;
-        width: 49%;
-    }
-    .preview{
-        cursor: pointer;
-        width: 120px;
-        height: 140px;
-        font-size: 13px;
-        text-align: center;
-        background-repeat: no-repeat;
-        padding: 10px 20px 10px;
-        overflow: hidden;
-    }
     .property{
         margin-top: 5px;
         height: 20px;
@@ -45,10 +31,6 @@
     export default{
         data(){
             return{
-                removeButtonShow: false,
-                dragButtonShow: false,
-                previewShow: true,
-                viewShow: false,
             }
         },
         computed:{

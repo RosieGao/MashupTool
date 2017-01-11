@@ -18,6 +18,7 @@ $(document).ready(function() {
             ui.helper.width("100%")
         },
         stop: function (event, ui) {
+            ui.helper.removeAttr("style");
             $(".canvas .column").sortable({
                 connectWith: ".column",
                 opacity: 0.5,
@@ -26,18 +27,16 @@ $(document).ready(function() {
         }
     });
 
-    // $("#components .ui-draggable").draggable({
-    //     connectToSortable: ".column",
-    //     helper: "clone",
-    //     scroll: false,
-    //     handle: ".preview",
-    //     start: function (event, ui) {
-    //     },
-    //     drag: function (event, ui) {
-    //         ui.helper.width("100%");
-    //     },
-    //     stop: function (event, ui) {
-    //         ui.helper.removeAttr("style");
-    //     }
-    // });
+    $(".component").draggable({
+        connectToSortable: ".column",
+        helper: "clone",
+        scroll: false,
+        handle: ".preview",
+        drag: function (event, ui) {
+            ui.helper.width("100%");
+        },
+        stop: function (event, ui) {
+            ui.helper.removeAttr("style");
+        }
+    });
 });

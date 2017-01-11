@@ -8,6 +8,11 @@
         border: 1px solid #DDDDDD;
         border-radius: 4px;
         height: 100%;
+        padding: 15px 20px;
+        overflow-x: hidden;
+    }
+    .canvas .preview{
+        display: none;
     }
 </style>
 
@@ -17,11 +22,6 @@
     export default{
         data(){
             return{
-                removeButtonShow: false,
-                dragButtonShow: false,
-                propertiesShow: false,
-                previewShow: false,
-                viewShow: true,
             }
         },
 

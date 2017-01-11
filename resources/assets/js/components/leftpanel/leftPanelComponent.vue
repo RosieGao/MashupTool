@@ -71,6 +71,37 @@
     #gridCollection, #components, #animation{
         padding: 0;
     }
+    .leftPanel .gridSystem{
+        display: inline-block;
+        width: 49%;
+    }
+    .leftPanel .component{
+        display: inline-block;
+        width: 49%;
+    }
+    .leftPanel .removeButton{
+        display: none;
+    }
+    .leftPanel .dragButton{
+        display: none;
+    }
+    .leftPanel .view{
+        display: none;
+    }
+    .leftPanel .preview{
+        cursor: pointer;
+        width: 120px;
+        height: 140px;
+        font-size: 13px;
+        text-align: center;
+        background-repeat: no-repeat;
+        padding: 10px 20px 10px;
+        overflow: hidden;
+    }
+    .leftPanel .preview img{
+        height: 60px;
+        width: 60px;
+	}
 </style>
 
 <script>
