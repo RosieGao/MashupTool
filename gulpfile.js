@@ -19,7 +19,8 @@ elixir(mix => {
         .sass('app.scss')
         .webpack('app.js')
         .scripts([
-            '/controller/dragdrop.js',
+            '/controller/dragAndDrop.js',
+            '/controller/componentsProperty.js',
     ]);
 
     mix.styles([
