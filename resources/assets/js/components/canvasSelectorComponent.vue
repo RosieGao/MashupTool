@@ -1,18 +1,18 @@
 <template>
     <div class="btn-group canvasSelector">
-        <button class="btn btn-default navbar-btn" v-on:click="changeCanvasSize('defaultSize')">
+        <button class="btn btn-default navbar-btn defaultSizeOption">
             <i class="fa fa-arrows-alt"></i>
         </button>
-        <button class="btn btn-default navbar-btn" v-on:click="changeCanvasSize('lgSize')">
+        <button class="btn btn-default navbar-btn lgSizeOption">
             <i class="fa fa-desktop"></i>
         </button>
-        <button class="btn btn-default navbar-btn" v-on:click="changeCanvasSize('mdSize')">
+        <button class="btn btn-default navbar-btn mdSizeOption">
             <i class="fa fa-laptop"></i>
         </button>
-        <button class="btn btn-default navbar-btn" v-on:click="changeCanvasSize('smSize')">
+        <button class="btn btn-default navbar-btn smSizeOption">
             <i class="fa fa-tablet"></i>
         </button>
-        <button class="btn btn-default navbar-btn" v-on:click="changeCanvasSize('xsSize')">
+        <button class="btn btn-default navbar-btn xsSizeOption">
             <i class="fa fa-mobile-phone"></i>
         </button>
     </div>
@@ -25,17 +25,10 @@
 </style>
 
 <script>
-    import store from '../vuex/store';
     export default{
         data(){
             return{
             }
         },
-
-        methods: {
-            changeCanvasSize: function(selected_size){
-                store.dispatch('changeCanvasSize', selected_size)
-            }
-        }
     }
 </script>

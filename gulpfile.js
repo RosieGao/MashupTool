@@ -20,7 +20,8 @@ elixir(mix => {
         .webpack('app.js')
         .scripts([
             '/controller/dragAndDrop.js',
-            '/controller/componentsProperty.js',
+            '/controller/mashupController.js',
+            '/controller/propertiesController.js',
     ]);
 
     mix.styles([

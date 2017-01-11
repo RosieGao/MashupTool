@@ -24,7 +24,7 @@ body{
     width: 500px;
 }
 
-.leftPanelContainer .row, .canvasContainer .row{
+.mashupLayout .leftPanelContainer .row, .mashupLayout .canvasContainer .row{
     width: 100%;
     background-color: #F5F5F5;
     box-shadow: inset 0 1px 13px rgba(0, 0, 0, 0.1);
@@ -34,7 +34,7 @@ body{
     position: relative;
     padding: 20px 10px 0;
 }
-.leftPanelContainer .row::before, .canvasContainer .row::before{
+.mashupLayout .leftPanelContainer .row::before, .mashupLayout .canvasContainer .row::before{
     background-color: #F5F5F5;
     border: 1px solid #DDDDDD;
     border-radius: 4px 0 4px 0;
@@ -48,7 +48,7 @@ body{
     position: absolute;
     top: -1px;
 }
-.column{
+.mashupLayout .column{
     background-color: #FFFFFF;
     border: 1px solid #DDDDDD;
     border-radius: 4px 4px 4px 4px;
@@ -57,7 +57,7 @@ body{
     padding: 35px 10px 5px;
 }
 
-.column::before{
+.mashupLayout .column::before{
     background-color: #F5F5F5;
     border: 1px solid #DDDDDD;
     border-radius: 4px 0 4px 0;
@@ -69,4 +69,24 @@ body{
     padding: 1px 5px;
     position: absolute;
     top: -1px;
+}
+
+
+/*PreviewLayout*/
+.previewLayout .leftPanelContainer{
+    display: none;
+}
+.previewLayout .canvasContainer{
+    margin: 0px;
+    width: 100%;
+}
+.previewLayout .canvas{
+    height: 100%;
+    overflow-x: hidden;
+}
+.previewLayout .canvas .removeButton{
+    display: none;
+}
+.previewLayout .canvas .dragButton{
+    display: none;
 }

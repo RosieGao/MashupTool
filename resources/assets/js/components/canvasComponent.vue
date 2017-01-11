@@ -4,7 +4,7 @@
 </template>
 
 <style>
-    .canvas{
+    .mashupLayout .canvas{
         border: 1px solid #DDDDDD;
         border-radius: 4px;
         height: 100%;

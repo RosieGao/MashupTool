@@ -1,13 +1,9 @@
-function initialContainer(){
+$(document).ready(function() {
     $(".canvas, .column").sortable({
         connectWith: ".column",
         opacity: 0.5,
         handle: ".dragButton",
     });
-}
-
-$(document).ready(function() {
-    initialContainer();
 
     $(".gridSystem").draggable({
         connectToSortable: ".canvas",
@@ -39,18 +35,52 @@ $(document).ready(function() {
             ui.helper.removeAttr("style");
         }
     });
+});
 
-    $(".gridCustomizeInput").on("keyup", function(){
+$(document).ready(function() {
+    $("#mashupMode").on("click", function(){
+        $("body").removeClass("previewLayout").addClass("mashupLayout");
+    });
+    $("#previewMode").on("click", function(){
+        $("body").removeClass("mashupLayout").addClass("previewLayout");
+    });
+    $("#clear").on("click", function(){
+        $(".canvas").empty();
+    });
+
+    $(".defaultSizeOption").on("click", function(){
+        $(".canvas").removeClass("lgSize mdSize smSize xsSize")
+    });
+    $(".lgSizeOption").on("click", function(){
+        $(".canvas").removeClass("lgSize mdSize smSize xsSize").addClass("lgSize")
+    });
+    $(".mdSizeOption").on("click", function(){
+        $(".canvas").removeClass("lgSize mdSize smSize xsSize").addClass("mdSize")
+    });
+    $(".smSizeOption").on("click", function(){
+        $(".canvas").removeClass("lgSize mdSize smSize xsSize").addClass("smSize")
+    });
+    $(".xsSizeOption").on("click", function(){
+        $(".canvas").removeClass("lgSize mdSize smSize xsSize").addClass("xsSize")
+    });
+
+    $(".canvas").on("click", ".removeButton", function(){
+        $(this).parent().remove();
+    });
+});
+
+$(document).ready(function() {
+    $(".gridCustomizeInput").on("keyup", function () {
         $(this).closest(".gridSystem").find(".row").empty();
         var inputList = $(this).val().split(" ", 12);
         var outputList = [];
         var total = 0;
-        $.each(inputList, function(inputList, item){
+        $.each(inputList, function (inputList, item) {
             total += parseInt(item);
         });
-        if (total == 12){
-            $.each(inputList, function(inputList, item){
-                outputList.push("<div class=\"column col-xs-" + item + " columndef" + item +"\"></div>");
+        if (total == 12) {
+            $.each(inputList, function (inputList, item) {
+                outputList.push("<div class=\"column col-xs-" + item + " columndef" + item + "\"></div>");
             });
             $(this).closest(".gridSystem").find(".row").append(outputList.join(""));
         }
