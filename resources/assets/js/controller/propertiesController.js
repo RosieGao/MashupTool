@@ -12,6 +12,21 @@ $(document).ready(function() {
                 outputList.push("<div class=\"column col-xs-" + item + " columndef" + item + "\"></div>");
             });
             $(this).closest(".gridSystem").find(".row").append(outputList.join(""));
+        } else{
+
         }
+    });
+
+    $(".canvas").on("click", "#stripedRows", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("table").toggleClass("table-striped");
+    });
+    $(".canvas").on("click", "#borderedTables", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("table").toggleClass("table-bordered");
+    });
+    $(".canvas").on("click", "#hoverRows", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("table").toggleClass("table-hover");
     });
 });

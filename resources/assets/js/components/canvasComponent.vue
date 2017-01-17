@@ -11,8 +11,20 @@
         padding: 15px 20px;
         overflow-x: hidden;
     }
+    .canvas .removeButton{
+        margin-left: 10px;
+    }
+    .canvas .dragButton{
+        margin-left: 10px;
+    }
+    .canvas .properties{
+        margin-left: 10px;
+    }
     .canvas .preview{
         display: none;
+    }
+    .canvas .view{
+        margin-top: 10px;
     }
 </style>
 

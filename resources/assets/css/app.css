@@ -90,3 +90,6 @@ body{
 .previewLayout .canvas .dragButton{
     display: none;
 }
+.previewLayout .canvas .properties{
+    display: none;
+}
