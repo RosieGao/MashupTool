@@ -3,9 +3,9 @@
         <span href="#close" class="removeButton"><i class="fa fa-times"></i></span>
         <span href="#close" class="dragButton"><i class="fa fa-arrows"></i></span>
         <span class="properties">
-            <button class="btn btn-default btn-xs" id="stripedRows" type="submit">Striped rows</button>
-            <button class="btn btn-default btn-xs" id="borderedTables" type="submit">Bordered tables</button>
-            <button class="btn btn-default btn-xs" id="hoverRows" type="submit">Hover rows</button>
+            <button class="btn btn-default btn-xs" id="stripedRowsButton" type="submit">Striped rows</button>
+            <button class="btn btn-default btn-xs" id="borderedTablesButton" type="submit">Bordered tables</button>
+            <button class="btn btn-default btn-xs" id="hoverRowsButton" type="submit">Hover rows</button>
         </span>
         <div class="preview">
             <i class="fa fa-table fa-5x"></i>
