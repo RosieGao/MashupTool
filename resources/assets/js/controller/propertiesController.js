@@ -1,3 +1,11 @@
+function toggleAttribute(selector, attr, value){
+    if (selector.attr(attr)){
+        selector.removeAttr(attr);
+    } else{
+        selector.attr(attr, value);
+    }
+}
+
 $(document).ready(function() {
     $(".gridCustomizeInput").on("keyup", function () {
         $(this).closest(".gridSystem").find(".row").empty();
@@ -45,5 +53,19 @@ $(document).ready(function() {
             $(this).closest(".component").find(".view").empty();
             $(this).closest(".component").find(".view").load('/componentInnerHTML.html #horizontalFormView');
         }
+    });
+
+    $(".canvas").on("click", "#inlineFormGroupButton", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("form").toggleClass("form-inline");
+    });
+    $(".canvas").on("click", "#focusStateButton", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("input").toggleClass("focusedInput");
+    });
+    $(".canvas").on("click", "#formGroupDisabledButton", function(e){
+        e.preventDefault();
+        var selector = $(this).closest(".component").find(".view").find("input");
+        toggleAttribute(selector, "disabled", "disabled");
     });
 });
