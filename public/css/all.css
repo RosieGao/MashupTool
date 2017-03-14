@@ -3352,6 +3352,11 @@ body{
     top: 80px;
     bottom: 0px;
 }
+.propertyPanelContainer{
+    position: fixed;
+    top: 80px;
+    bottom: 0px;
+}
 .lgSize{
     width: 1170px;
 }
@@ -3365,6 +3370,7 @@ body{
     width: 500px;
 }
 
+/*mashupLayout*/
 .mashupLayout .leftPanelContainer .row, .mashupLayout .canvasContainer .row{
     width: 100%;
     background-color: #F5F5F5;
@@ -3412,8 +3418,7 @@ body{
     top: -1px;
 }
 
-
-/*PreviewLayout*/
+/*previewLayout*/
 .previewLayout .leftPanelContainer{
     display: none;
 }

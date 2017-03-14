@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="view">
-            <table id="customizedTable" class="table" contenteditable="true">
+            <table class="table" contenteditable="true">
             </table>
         </div>
     </div>
@@ -42,9 +42,10 @@
         },
          methods:{
             customizeTable: function(){
-                for(var rowIndex=0; rowIndex<parseInt(this.userInputRow,10); rowIndex++){
-                    var row = document.getElementById('customizedTable').insertRow(rowIndex);
-                    for(var columnIndex=0; columnIndex<parseInt(this.userInputColumn,10); columnIndex++){
+                $('.leftPanel .tableComponent table').empty();
+                for(var rowIndex=0; rowIndex<parseInt(this.userInputRow); rowIndex++){
+                    var row = document.querySelector('.leftPanel .tableComponent table').insertRow(rowIndex);
+                    for(var columnIndex=0; columnIndex<parseInt(this.userInputColumn); columnIndex++){
                         var column = row.insertCell(columnIndex);
                         column.innerHTML="Row-" + rowIndex + " Column-" + columnIndex;
                     }

@@ -35,6 +35,13 @@ $(document).ready(function() {
             ui.helper.removeAttr("style");
         }
     });
+
+    $(".selectComponent").draggable({
+        stop: function () {
+            $(".propertyPanel").empty();
+            $(".propertyPanel").load('/propertyPanelInnerHTML.html #selectPropertyPanel');
+        }
+    });
 });
 
 $(document).ready(function() {
