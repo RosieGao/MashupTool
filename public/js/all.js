@@ -146,6 +146,93 @@ $(document).ready(function() {
         var selector = $(this).closest(".component").find(".view").find("input");
         toggleAttribute(selector, "disabled", "disabled");
     });
+
+    $(".canvas").on("click", "#defaultStyleButton", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("button").removeClass("btn-default btn-primary btn-success btn-info btn-warning btn-danger btn-link");
+        $(this).closest(".component").find(".view").find("button").addClass("btn-default");
+    });
+
+    $(".canvas").on("click", "#primaryStyleButton", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("button").removeClass("btn-default btn-primary btn-success btn-info btn-warning btn-danger btn-link");
+        $(this).closest(".component").find(".view").find("button").addClass("btn-primary");
+    });
+
+    $(".canvas").on("click", "#successStyleButton", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("button").removeClass("btn-default btn-primary btn-success btn-info btn-warning btn-danger btn-link");
+        $(this).closest(".component").find(".view").find("button").addClass("btn-success");
+    });
+
+    $(".canvas").on("click", "#infoStyleButton", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("button").removeClass("btn-default btn-primary btn-success btn-info btn-warning btn-danger btn-link");
+        $(this).closest(".component").find(".view").find("button").addClass("btn-info");
+    });
+
+    $(".canvas").on("click", "#warningStyleButton", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("button").removeClass("btn-default btn-primary btn-success btn-info btn-warning btn-danger btn-link");
+        $(this).closest(".component").find(".view").find("button").addClass("btn-warning");
+    });
+
+    $(".canvas").on("click", "#dangerStyleButton", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("button").removeClass("btn-default btn-primary btn-success btn-info btn-warning btn-danger btn-link");
+        $(this).closest(".component").find(".view").find("button").addClass("btn-danger");
+    });
+
+    $(".canvas").on("click", "#linkStyleButton", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("button").removeClass("btn-default btn-primary btn-success btn-info btn-warning btn-danger btn-link");
+        $(this).closest(".component").find(".view").find("button").addClass("btn-link");
+    });
+
+    $(".canvas").on("click", "#largeSizeButton", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("button").removeClass("btn-lg btn-sm btn-xs");
+        $(this).closest(".component").find(".view").find("button").addClass("btn-lg");
+    });
+
+    $(".canvas").on("click", "#mediumSizeButton", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("button").removeClass("btn-lg btn-sm btn-xs");
+    });
+
+    $(".canvas").on("click", "#smallSizeButton", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("button").removeClass("btn-lg btn-sm btn-xs");
+        $(this).closest(".component").find(".view").find("button").addClass("btn-sm");
+    });
+
+    $(".canvas").on("click", "#extraSmallSizeButton", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("button").removeClass("btn-lg btn-sm btn-xs");
+        $(this).closest(".component").find(".view").find("button").addClass("btn-xs");
+    });
+
+    $(".canvas").on("click", "#imageDefaultShape", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("img").removeClass("img-rounded img-circle img-thumbnail");
+    });
+    $(".canvas").on("click", "#imageRoundedShape", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("img").removeClass("img-rounded img-circle img-thumbnail");
+        $(this).closest(".component").find(".view").find("img").toggleClass("img-rounded");
+    });
+    $(".canvas").on("click", "#imageCircleShape", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("img").removeClass("img-rounded img-circle img-thumbnail");
+        $(this).closest(".component").find(".view").find("img").toggleClass("img-circle");
+    });
+    $(".canvas").on("click", "#imageThumbnailShape", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("img").removeClass("img-rounded img-circle img-thumbnail");
+        $(this).closest(".component").find(".view").find("img").toggleClass("img-thumbnail");
+    });
+
+
 });
 
 //# sourceMappingURL=all.js.map

@@ -11,7 +11,7 @@
         </div>
         <div class="view">
             <select class="form-control">
-                <option>option</option>
+                <option>Option</option>
             </select>
         </div>
     </div>
@@ -35,7 +35,7 @@
             customizeSelect: function(){
                 $(".leftPanel .selectComponent select").empty();
                 for(var count=0; count<parseInt(this.userInputNumberOfOptions); count++){
-                    $(".leftPanel .selectComponent select").append("<option>option</option>");
+                    $(".leftPanel .selectComponent select").append("<option>Option " + (count+1) + "</option>");
                 }
             }
         }
