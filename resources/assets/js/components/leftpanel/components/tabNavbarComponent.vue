@@ -26,7 +26,7 @@
 </template>
 
 <style>
-    .buttonGroupComponent .preview input{
+    .tabNavbarComponent .preview input{
         margin-top: 5px;
         height: 20px;
     }
