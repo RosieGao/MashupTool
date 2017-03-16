@@ -1,10 +1,10 @@
 <template>
-    <div class="component">
+    <div class="component imageComponent">
         <span href="#close" class="removeButton"><i class="fa fa-times"></i></span>
         <span href="#close" class="dragButton"><i class="fa fa-arrows"></i></span>
         <span class="properties">
             <form style="display: inline-block">
-                <input type="file" @change="imageChange"/>
+                <input type="file" onchange="imageChange(this);"/>
             </form>
             <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown" aria-expanded="false">
@@ -23,7 +23,7 @@
             <span>Images</span>
         </div>
         <div class="view">
-            <img :src="imageSrc" class="img-responsive" alt="Responsive Image">
+            <img src="/images/responsiveimage1.png" class="img-responsive" alt="Responsive Image">
         </div>
     </div>
 </template>
@@ -36,20 +36,7 @@
     export default{
         data(){
             return{
-                imageSrc: '',
             }
         },
-        methods:{
-            imageChange: function(e){
-                var files = e.target.files || e.dataTransfer.files;
-                if (!files.length) {
-                    var reader = new FileReader();
-                    reader.onload = function(e) {
-                        this.imageSrc = e.target.result;
-                    }
-                    reader.readAsDataURL(files[0]);
-                }
-            }
-        }
     }
 </script>

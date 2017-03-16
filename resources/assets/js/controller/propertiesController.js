@@ -6,6 +6,28 @@ function toggleAttribute(selector, attr, value){
     }
 }
 
+function imageChange(e){
+    if (e.files && e.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $(".canvas .imageComponent .view img").attr("src", e.target.result);
+        }
+        reader.readAsDataURL(e.files[0]);
+    }
+}
+
+function renderInnerDropdownProperties(uniqueId){
+    var node =
+        "<div class=\"innerElementProperties\" value=" + uniqueId +">" +
+        "<input type='text' class=\"form-control\" placeholder='Amount' id='setDropdownAmounts' style='width:75px;height:23px;display:inline;'>" +
+        "<button class=\"btn btn-default btn-xs\" id=\"emptyDropdown\" type=\"submit\">Empty Dropdown</button>" +
+        "<button class=\"btn btn-default btn-xs\" id=\"addDropdownHeaders\" type=\"submit\">Add Headers</button>" +
+        "<button class=\"btn btn-default btn-xs\" id=\"addDropdownOptions\" type=\"submit\">Add Options</button>" +
+        "<button class=\"btn btn-default btn-xs\" id=\"addDropdownDividers\" type=\"submit\">Add Dividers</button>" +
+        "</div>";
+    return node;
+}
+
 $(document).ready(function() {
     $(".gridCustomizeInput").on("keyup", function () {
         $(this).closest(".gridSystem").find(".row").empty();
@@ -154,5 +176,113 @@ $(document).ready(function() {
         $(this).closest(".component").find(".view").find("img").toggleClass("img-thumbnail");
     });
 
+    $(".canvas").on("keyup", "#setDropdownAmounts", function(e){
+        e.preventDefault();
+        var uid = $(this).parent().attr("value");
+        $("#"+uid+" .dropdown-menu").empty();
+        for(var count=0; count<$(this).val(); count++){
+            $("#"+uid+" .dropdown-menu").append(
+                "<li><a href='#' contenteditable='true'>Option " + (count+1) +"</a></li>");
+        }
+    });
+    $(".canvas").on("click", "#emptyDropdown", function(e){
+        e.preventDefault();
+        var uid = $(this).parent().attr("value");
+        if (uid){
+            $("#"+uid+" .dropdown-menu").empty();
+        } else{
+            $(this).closest(".component").find(".view").find(".dropdown-menu").empty();
+        }
+    });
+    $(".canvas").on("click", "#addDropdownHeaders", function(e){
+        e.preventDefault();
+        var node = "<li class=\"dropdown-header\" contenteditable=\"true\">Dropdown Header</li>";
+        var uid = $(this).parent().attr("value");
+        if (uid){
+            $("#"+uid+" .dropdown-menu").append(node);
+        } else{
+            $(this).closest(".component").find(".view").find(".dropdown-menu").append(node);
+        }
+    });
+    $(".canvas").on("click", "#addDropdownOptions", function(e){
+        e.preventDefault();
+        var node = "<li><a href=\"#\" contenteditable=\"true\">Option</a></li>";
+        var uid = $(this).parent().attr("value");
+        if (uid){
+            $("#"+uid+" .dropdown-menu").append(node);
+        } else{
+            $(this).closest(".component").find(".view").find(".dropdown-menu").append(node);
+        }
+    });
+    $(".canvas").on("click", "#addDropdownDividers", function(e){
+        e.preventDefault();
+        var node = "<li role=\"separator\" class=\"divider\"></li>";
+        var uid = $(this).parent().attr("value");
+        if (uid){
+            $("#"+uid+" .dropdown-menu").append(node);
+        } else{
+            $(this).closest(".component").find(".view").find(".dropdown-menu").append(node);
+        }
+    });
 
+    $(".canvas").on("click", "#largeButtonGroup", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("#buttonGroup").removeClass("btn-group-lg btn-group-sm btn-group-xs");
+        $(this).closest(".component").find(".view").find("#buttonGroup").addClass("btn-group-lg");
+    });
+    $(".canvas").on("click", "#mediumButtonGroup", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("#buttonGroup").removeClass("btn-group-lg btn-group-sm btn-group-xs");
+    });
+    $(".canvas").on("click", "#smallButtonGroup", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("#buttonGroup").removeClass("btn-group-lg btn-group-sm btn-group-xs");
+        $(this).closest(".component").find(".view").find("#buttonGroup").addClass("btn-group-sm");
+    });
+    $(".canvas").on("click", "#extraSmallButtonGroup", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("#buttonGroup").removeClass("btn-group-lg btn-group-sm btn-group-xs");
+        $(this).closest(".component").find(".view").find("#buttonGroup").addClass("btn-group-xs");
+    });
+    $(".canvas").on("click", "#verticalButtonGroup", function(e){
+        e.preventDefault();
+        var selector = $(this).closest(".component").find(".view").find("#buttonGroup");
+        if (selector.hasClass("btn-group")){
+            selector.removeClass("btn-group");
+            selector.addClass("btn-group-vertical");
+        } else {
+            selector.removeClass("btn-group-vertical");
+            selector.addClass("btn-group");
+        };
+    });
+    $(".canvas").on("click", "#emptyButtonGroup", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".innerElementProperties").remove();
+        $(this).closest(".component").find(".view").find("#buttonGroup").empty();
+    });
+    $(".canvas").on("click", "#addButtons", function(e){
+        e.preventDefault();
+        var node = "<button class=\"btn btn-default\" contenteditable=\"true\">Button group</button>";
+        $(this).closest(".component").find(".view").find("#buttonGroup").append(node);
+    });
+    $(".canvas").on("click", "#addDropdowns", function(e){
+        e.preventDefault();
+        var node =
+            "<div class=\"btn-group\">" +
+                "<button class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\" contenteditable=\"true\">" +
+                    "Dropdown " +
+                    "<span class=\"caret\"></span>" +
+                "</button>" +
+                "<ul class=\"dropdown-menu\">" +
+                    "<li><a href=\"#\" contenteditable=\"true\">Option 1</a></li>" +
+                    "<li><a href=\"#\" contenteditable=\"true\">Option 2</a></li>" +
+                    "<li><a href=\"#\" contenteditable=\"true\">Option 3</a></li>" +
+                "</ul>" +
+            "</div>";
+        $(this).closest(".component").find(".view").find("#buttonGroup").append(node);
+        $(this).closest(".component").find(".view").find("#buttonGroup").find(".btn-group:last-child").uniqueId();
+        var uniqueId = $(this).closest(".component").find(".view").find("#buttonGroup").find(".btn-group:last-child").attr("id");
+        var innerNode = renderInnerDropdownProperties(uniqueId);
+        $(this).closest(".component").find(".view").before(innerNode);
+    });
 });

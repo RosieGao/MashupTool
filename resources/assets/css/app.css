@@ -98,3 +98,6 @@ body{
 .previewLayout .canvas .properties{
     display: none;
 }
+.previewLayout .canvas .innerElementProperties{
+    display: none;
+}

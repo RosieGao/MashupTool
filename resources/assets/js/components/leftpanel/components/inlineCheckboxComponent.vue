@@ -6,7 +6,7 @@
             <img src="/images/wait.png">
             <span>Inline Checkboxes</span>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="# of options" v-model="userInputNumberOfOptions" v-on:keyup="customizeSelect">
+                <input type="text" class="form-control" placeholder="# of options" v-model="userInputNumberOfOptions" v-on:keyup="changeNumberOfOptions">
             </div>
         </div>
         <div class="view">
@@ -40,7 +40,7 @@
             }
         },
          methods:{
-            customizeSelect: function(){
+            changeNumberOfOptions: function(){
                 $(".leftPanel .inlineCheckboxComponent form").empty();
                 for(var count=0; count<parseInt(this.userInputNumberOfOptions); count++){
                     $(".leftPanel .inlineCheckboxComponent form").append(
