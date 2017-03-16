@@ -338,12 +338,12 @@ $(document).ready(function() {
         $(this).closest(".component").find(".innerElementProperties").remove();
         $(this).closest(".component").find(".view").find("#buttonGroup").empty();
     });
-    $(".canvas").on("click", "#addButtons", function(e){
+    $(".canvas").on("click", "#buttonGroupAddButtons", function(e){
         e.preventDefault();
         var node = "<button class=\"btn btn-default\" contenteditable=\"true\">Button group</button>";
         $(this).closest(".component").find(".view").find("#buttonGroup").append(node);
     });
-    $(".canvas").on("click", "#addDropdowns", function(e){
+    $(".canvas").on("click", "#buttonGroupAddDropdowns", function(e){
         e.preventDefault();
         var node =
             "<div class=\"btn-group\">" +
@@ -362,6 +362,41 @@ $(document).ready(function() {
         var uniqueId = $(this).closest(".component").find(".view").find("#buttonGroup").find(".btn-group:last-child").attr("id");
         var innerNode = renderInnerDropdownProperties(uniqueId);
         $(this).closest(".component").find(".view").before(innerNode);
+    });
+
+    $(".canvas").on("click", "#emptyTabNavbar", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".innerElementProperties").remove();
+        $(this).closest(".component").find(".view").find(".nav-tabs").empty();
+    });
+    $(".canvas").on("click", "#tabNavbarAddTabs", function(e){
+        e.preventDefault();
+        var node = "<li role=\"presentation\"><a href=\"#\" contenteditable=\"true\">Tab</a></li>";
+        $(this).closest(".component").find(".view").find(".nav-tabs").append(node);
+    });
+    $(".canvas").on("click", "#tabNavbarAddDropdowns", function(e){
+        e.preventDefault();
+        var node =
+            "<li role=\"presentation\" class=\"dropdown\">" +
+                "<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" aria-expanded=\"false\" contenteditable=\"true\">" +
+                    "Dropdown " +
+                    "<span class=\"caret\"></span>" +
+                "</a>" +
+                "<ul class=\"dropdown-menu\">" +
+                    "<li><a href=\"#\" contenteditable=\"true\">Option 1</a></li>" +
+                    "<li><a href=\"#\" contenteditable=\"true\">Option 2</a></li>" +
+                    "<li><a href=\"#\" contenteditable=\"true\">Option 3</a></li>" +
+                "</ul>" +
+            "</li>";
+        $(this).closest(".component").find(".view").find(".nav-tabs").append(node);
+        $(this).closest(".component").find(".view").find(".nav-tabs").find(".dropdown:last-child").uniqueId();
+        var uniqueId = $(this).closest(".component").find(".view").find(".nav-tabs").find(".dropdown:last-child").attr("id");
+        var innerNode = renderInnerDropdownProperties(uniqueId);
+        $(this).closest(".component").find(".view").before(innerNode);
+    });
+    $(".canvas").on("click", "#justifiedTabNavbar", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".nav-tabs").toggleClass("nav-justified");
     });
 });
 

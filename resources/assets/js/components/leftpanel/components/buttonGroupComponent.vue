@@ -16,8 +16,8 @@
             </div>
             <button class="btn btn-default btn-xs" id="verticalButtonGroup" type="submit">Vertical</button>
             <button class="btn btn-default btn-xs" id="emptyButtonGroup" type="submit">Empty</button>
-            <button class="btn btn-default btn-xs" id="addButtons" type="submit">Add Buttons</button>
-            <button class="btn btn-default btn-xs" id="addDropdowns" type="submit">Add Dropdowns</button>
+            <button class="btn btn-default btn-xs" id="buttonGroupAddButtons" type="submit">Add Buttons</button>
+            <button class="btn btn-default btn-xs" id="buttonGroupAddDropdowns" type="submit">Add Dropdowns</button>
         </span>
         <div class="preview">
             <img src="/images/wait.png">
@@ -55,7 +55,7 @@
                 $(".leftPanel .buttonGroupComponent .view .btn-group").empty();
                 for(var count=0; count<parseInt(this.userInputNumberOfButtons); count++){
                     $(".leftPanel .buttonGroupComponent .view .btn-group").append(
-                    "<button class='btn btn-default' contenteditable='true'>Button " + (count+1) +"</button>");
+                    "<button class='btn btn-default' contenteditable='true'>Button " + (count+1) + "</button>");
                 }
             }
         }
