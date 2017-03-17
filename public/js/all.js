@@ -347,15 +347,15 @@ $(document).ready(function() {
         e.preventDefault();
         var node =
             "<div class=\"btn-group\">" +
-                "<button class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\" contenteditable=\"true\">" +
-                    "Dropdown " +
-                    "<span class=\"caret\"></span>" +
-                "</button>" +
-                "<ul class=\"dropdown-menu\">" +
-                    "<li><a href=\"#\" contenteditable=\"true\">Option 1</a></li>" +
-                    "<li><a href=\"#\" contenteditable=\"true\">Option 2</a></li>" +
-                    "<li><a href=\"#\" contenteditable=\"true\">Option 3</a></li>" +
-                "</ul>" +
+            "<button class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\" contenteditable=\"true\">" +
+            "Dropdown " +
+            "<span class=\"caret\"></span>" +
+            "</button>" +
+            "<ul class=\"dropdown-menu\">" +
+            "<li><a href=\"#\" contenteditable=\"true\">Option 1</a></li>" +
+            "<li><a href=\"#\" contenteditable=\"true\">Option 2</a></li>" +
+            "<li><a href=\"#\" contenteditable=\"true\">Option 3</a></li>" +
+            "</ul>" +
             "</div>";
         $(this).closest(".component").find(".view").find("#buttonGroup").append(node);
         $(this).closest(".component").find(".view").find("#buttonGroup").find(".btn-group:last-child").uniqueId();
@@ -378,15 +378,15 @@ $(document).ready(function() {
         e.preventDefault();
         var node =
             "<li role=\"presentation\" class=\"dropdown\">" +
-                "<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" aria-expanded=\"false\" contenteditable=\"true\">" +
-                    "Dropdown " +
-                    "<span class=\"caret\"></span>" +
-                "</a>" +
-                "<ul class=\"dropdown-menu\">" +
-                    "<li><a href=\"#\" contenteditable=\"true\">Option 1</a></li>" +
-                    "<li><a href=\"#\" contenteditable=\"true\">Option 2</a></li>" +
-                    "<li><a href=\"#\" contenteditable=\"true\">Option 3</a></li>" +
-                "</ul>" +
+            "<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" aria-expanded=\"false\" contenteditable=\"true\">" +
+            "Dropdown " +
+            "<span class=\"caret\"></span>" +
+            "</a>" +
+            "<ul class=\"dropdown-menu\">" +
+            "<li><a href=\"#\" contenteditable=\"true\">Option 1</a></li>" +
+            "<li><a href=\"#\" contenteditable=\"true\">Option 2</a></li>" +
+            "<li><a href=\"#\" contenteditable=\"true\">Option 3</a></li>" +
+            "</ul>" +
             "</li>";
         $(this).closest(".component").find(".view").find(".nav-tabs").append(node);
         $(this).closest(".component").find(".view").find(".nav-tabs").find(".dropdown:last-child").uniqueId();
@@ -397,6 +397,45 @@ $(document).ready(function() {
     $(".canvas").on("click", "#justifiedTabNavbar", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find(".nav-tabs").toggleClass("nav-justified");
+    });
+
+    $(".canvas").on("click", "#emptyPillNavbar", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".innerElementProperties").remove();
+        $(this).closest(".component").find(".view").find(".nav-pills").empty();
+    });
+    $(".canvas").on("click", "#pillNavbarAddTabs", function(e){
+        e.preventDefault();
+        var node = "<li role=\"presentation\"><a href=\"#\" contenteditable=\"true\">Tab</a></li>";
+        $(this).closest(".component").find(".view").find(".nav-pills").append(node);
+    });
+    $(".canvas").on("click", "#pillNavbarAddDropdowns", function(e){
+        e.preventDefault();
+        var node =
+            "<li role=\"presentation\" class=\"dropdown\">" +
+            "<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" aria-expanded=\"false\" contenteditable=\"true\">" +
+            "Dropdown " +
+            "<span class=\"caret\"></span>" +
+            "</a>" +
+            "<ul class=\"dropdown-menu\">" +
+            "<li><a href=\"#\" contenteditable=\"true\">Option 1</a></li>" +
+            "<li><a href=\"#\" contenteditable=\"true\">Option 2</a></li>" +
+            "<li><a href=\"#\" contenteditable=\"true\">Option 3</a></li>" +
+            "</ul>" +
+            "</li>";
+        $(this).closest(".component").find(".view").find(".nav-pills").append(node);
+        $(this).closest(".component").find(".view").find(".nav-pills").find(".dropdown:last-child").uniqueId();
+        var uniqueId = $(this).closest(".component").find(".view").find(".nav-pills").find(".dropdown:last-child").attr("id");
+        var innerNode = renderInnerDropdownProperties(uniqueId);
+        $(this).closest(".component").find(".view").before(innerNode);
+    });
+    $(".canvas").on("click", "#justifiedPillNavbar", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".nav-pills").toggleClass("nav-justified");
+    });
+    $(".canvas").on("click", "#stackablePillNavbar", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".nav-pills").toggleClass("nav-stacked");
     });
 });
 
