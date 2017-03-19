@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/homepage', function () {
+    return view('layouts.homepage');
+});
+
+Route::get('/mashup', function () {
     return view('layouts.app');
 });
