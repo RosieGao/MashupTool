@@ -7,7 +7,7 @@
     <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
-<body>
+<body class="mashupLayout">
     <div id="app">
         <div class="container-fluid row">
             <nav class="navbar navbar-default">
@@ -17,9 +17,9 @@
                     </div>
                     <ul class="nav navbar-nav navbar-left">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-default navbar-btn" id="designMode">
+                            <button type="button" class="btn btn-default navbar-btn" id="mashupMode">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                                Design
+                                Mashup
                             </button>
                             <button type="button" class="btn btn-default navbar-btn" id="previewMode">
                                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
@@ -44,8 +44,11 @@
                 <div class="leftPanelContainer col-md-2">
                     <left_panel_component></left_panel_component>
                 </div>
-                <div class="canvasContainer col-md-10 col-sm-offset-2">
+                <div class="canvasContainer col-md-8 col-sm-offset-2">
                     <canvas_component></canvas_component>
+                </div>
+                <div class="propertyPanelContainer col-md-2 col-sm-offset-10">
+                    <property_panel_component></property_panel_component>
                 </div>
             </div>
         </div>

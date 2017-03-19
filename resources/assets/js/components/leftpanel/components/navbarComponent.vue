@@ -2,6 +2,12 @@
     <div class="component">
         <span href="#close" class="removeButton"><i class="fa fa-times"></i></span>
         <span href="#close" class="dragButton"><i class="fa fa-arrows"></i></span>
+        <span class="properties">
+            <button class="btn btn-default btn-xs" id="navbarFixedToTp" type="submit">Fixed to top</button>
+            <button class="btn btn-default btn-xs" id="navbarFixedToBottom" type="submit">Fixed to bottom</button>
+            <button class="btn btn-default btn-xs" id="navbarStaticTop" type="submit">Static top</button>
+            <button class="btn btn-default btn-xs" id="navbarInverted" type="submit">Inverted navbar</button>
+        </span>
         <div class="preview">
             <img src="/images/navbar.png">
             <span>Navbars</span>
@@ -23,7 +29,7 @@
                             <li class="active"><a href="#" contenteditable="true">Link <span class="sr-only">(current)</span></a></li>
                             <li><a href="#" contenteditable="true">Link</a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" contenteditable="true">Dropdown <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" contenteditable="true">Dropdown <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#" contenteditable="true">Action</a></li>
                                     <li><a href="#" contenteditable="true">Another action</a></li>
@@ -44,7 +50,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="#">Link</a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" contenteditable="true">Dropdown <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" contenteditable="true">Dropdown <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#" contenteditable="true">Action</a></li>
                                     <li><a href="#" contenteditable="true">Another action</a></li>

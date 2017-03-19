@@ -7,11 +7,13 @@
             <span>Choose Files</span>
         </div>
         <div class="view">
-            <div class="form-group">
-                <label contenteditable="true">File input</label>
-                <input type="file">
-                <p class="help-block" contenteditable="true">Example block-level help text here.</p>
-            </div>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label contenteditable="true">File Upload</label>
+                    <input class="form-control" name='file' type="file">
+                    <input class="btn btn-default" type="submit" value="Upload">
+                </div>
+            </form>
         </div>
     </div>
 </template>
@@ -19,6 +21,7 @@
 <style>
 
 </style>
+
 
 <script>
     export default{

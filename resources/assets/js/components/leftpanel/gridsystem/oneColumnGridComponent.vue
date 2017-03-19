@@ -5,7 +5,7 @@
         <div class="preview">
             <img src="/images/onecolumn.png">
             <span>One Column</span>
-            <input type="text" class="form-control property" placeholder="12">
+            <input readonly type="text" class="form-control" placeholder="12">
         </div>
         <div class="view">
             <div class="row">
@@ -17,7 +17,7 @@
 </template>
 
 <style>
-    .property{
+    .gridSystem .preview input{
         margin-top: 5px;
         height: 20px;
     }

@@ -5,21 +5,16 @@
         <div class="preview">
             <img src="/images/customize.png">
             <span>Customize</span>
-            <input type="text" class="form-control property" placeholder="12">
+            <input type="text" class="form-control gridCustomizeInput" placeholder="">
         </div>
         <div class="view">
             <div class="row">
-
             </div>
         </div>
     </div>
 </template>
 
 <style>
-    .property{
-        margin-top: 5px;
-        height: 20px;
-    }
 </style>
 
 <script>
@@ -28,8 +23,5 @@
             return{
             }
         },
-        computed:{
-
-        }
     }
 </script>

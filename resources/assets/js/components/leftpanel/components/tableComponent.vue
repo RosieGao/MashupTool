@@ -1,56 +1,56 @@
 <template>
-    <div class="component">
+    <div class="component tableComponent">
         <span href="#close" class="removeButton"><i class="fa fa-times"></i></span>
         <span href="#close" class="dragButton"><i class="fa fa-arrows"></i></span>
+        <span class="properties">
+            <button class="btn btn-default btn-xs" id="stripedRowsButton" type="submit">Striped rows</button>
+            <button class="btn btn-default btn-xs" id="borderedTablesButton" type="submit">Bordered tables</button>
+            <button class="btn btn-default btn-xs" id="hoverRowsButton" type="submit">Hover rows</button>
+        </span>
         <div class="preview">
             <i class="fa fa-table fa-5x"></i>
             <span>Tables</span>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="row" v-model="userInputRow" v-on:keyup="customizeTable">
+                <input type="text" class="form-control" placeholder="col" v-model="userInputColumn" v-on:keyup="customizeTable">
+            </div>
         </div>
         <div class="view">
             <table class="table" contenteditable="true">
-                <caption>Optional table caption.</caption>
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-                </tbody>
             </table>
         </div>
     </div>
 </template>
 
 <style>
-
+    .tableComponent .preview input{
+        margin-top: 5px;
+        height: 20px;
+        width: 45%;
+        display: inline-block;
+        padding: 0px 5px;
+    }
 </style>
 
 <script>
     export default{
         data(){
             return{
+                userInputRow: '',
+                userInputColumn: '',
             }
         },
+         methods:{
+            customizeTable: function(){
+                $('.leftPanel .tableComponent table').empty();
+                for(var rowIndex=0; rowIndex<parseInt(this.userInputRow); rowIndex++){
+                    var row = document.querySelector('.leftPanel .tableComponent table').insertRow(rowIndex);
+                    for(var columnIndex=0; columnIndex<parseInt(this.userInputColumn); columnIndex++){
+                        var column = row.insertCell(columnIndex);
+                        column.innerHTML="Row-" + rowIndex + " Column-" + columnIndex;
+                    }
+                }
+            }
+        }
     }
 </script>

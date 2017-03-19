@@ -85,6 +85,9 @@
     .leftPanel .dragButton{
         display: none;
     }
+    .leftPanel .properties{
+        display: none;
+    }
     .leftPanel .view{
         display: none;
     }

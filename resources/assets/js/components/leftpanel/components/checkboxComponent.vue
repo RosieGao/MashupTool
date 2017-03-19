@@ -11,7 +11,7 @@
                 <div class="checkbox">
                     <label contenteditable="true">
                         <input type="checkbox" value="">
-                        Option one is this and that, be sure to include why it's great
+                        Option
                     </label>
                 </div>
             </form>

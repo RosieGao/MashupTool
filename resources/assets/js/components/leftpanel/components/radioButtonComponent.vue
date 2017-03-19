@@ -9,8 +9,8 @@
         <div class="view">
             <div class="radio">
                 <label contenteditable="true">
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-                    Option one is this and that, be sure to include why it's great
+                    <input type="radio" value="">
+                    Option
                 </label>
             </div>
         </div>
