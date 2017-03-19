@@ -10,7 +10,7 @@ function imageChange(obj){
     if (obj.files && obj.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
-            $(".canvas .imageComponent .view img").attr("src", e.target.result);
+            $(obj).closest(".imageComponent").find("img").attr("src", e.target.result);
         };
         reader.readAsDataURL(obj.files[0]);
     }
@@ -26,19 +26,58 @@ function thumbnailImageUpload(obj){
     }
 }
 
+function mediaObjectUpload(obj){
+    if (obj.files && obj.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e){
+            $(obj).closest(".media").find("img").attr("src", e.target.result);
+        };
+        reader.readAsDataURL(obj.files[0]);
+    }
+}
+
 function renderInnerDropdownProperties(uniqueId){
     var node =
         "<div class=\"innerElementProperties\" value=" + uniqueId +">" +
-        "<input type='text' class=\"form-control\" placeholder='Amount' id='setDropdownAmounts' style='width:75px;height:23px;display:inline;'>" +
-        "<button class=\"btn btn-default btn-xs\" id=\"emptyDropdown\" type=\"submit\">Empty Dropdown</button>" +
-        "<button class=\"btn btn-default btn-xs\" id=\"addDropdownHeaders\" type=\"submit\">Add Headers</button>" +
-        "<button class=\"btn btn-default btn-xs\" id=\"addDropdownOptions\" type=\"submit\">Add Options</button>" +
-        "<button class=\"btn btn-default btn-xs\" id=\"addDropdownDividers\" type=\"submit\">Add Dividers</button>" +
+            "<input type='text' class=\"form-control\" placeholder='Amount' id='setDropdownAmounts' style='width:75px;height:23px;display:inline;'>" +
+            "<button class=\"btn btn-default btn-xs\" id=\"emptyDropdown\" type=\"submit\">Empty Dropdown</button>" +
+            "<button class=\"btn btn-default btn-xs\" id=\"addDropdownHeaders\" type=\"submit\">Add Headers</button>" +
+            "<button class=\"btn btn-default btn-xs\" id=\"addDropdownOptions\" type=\"submit\">Add Options</button>" +
+            "<button class=\"btn btn-default btn-xs\" id=\"addDropdownDividers\" type=\"submit\">Add Dividers</button>" +
+        "</div>";
+    return node;
+}
+
+function renderInnerListGroupProperties(uniqueId){
+    var node =
+        "<div class=\"innerElementProperties\" value=" + uniqueId +">" +
+            "<input type='text' class=\"form-control\" placeholder='Amount' id='setListGroupAmounts' style='width:75px;height:23px;display:inline;'>" +
+            "<button class='btn btn-default btn-xs' id='listGroupEmpty' type='submit'>Empty</button>" +
+            "<button class='btn btn-default btn-xs' id='listGroupAddItems' type='submit'>Add Items</button>" +
+            "<button class='btn btn-default btn-xs' id='listGroupAddLinkItems' type='submit'>Add Link Items</button>" +
+            "<button class='btn btn-default btn-xs' id='listGroupAddButtonItems' type='submit'>Add Button Items</button>" +
+            "<button class='btn btn-default btn-xs' id='listGroupAddDisabledItems' type='submit'>Add Disabled Items</button>" +
+            "<button class='btn btn-default btn-xs' id='listGroupAddContent' type='submit'>Add Custom Content</button>" +
+        "</div>";
+    return node;
+}
+
+function renderInnerTableProperties(uniqueId){
+    var node =
+        "<div class=\"innerElementProperties\" value=" + uniqueId +">" +
+            "<input type='text' class=\"form-control\" placeholder='Row' id='setTableRow' style='width:75px;height:23px;display:inline;'>" +
+            "<input type='text' class=\"form-control\" placeholder='column' id='setTableColumn' style='width:75px;height:23px;display:inline;'>" +
+            "<button class='btn btn-default btn-xs' id='stripedRowsButton' type='submit'>Striped rows</button>" +
+            "<button class='btn btn-default btn-xs' id='borderedTablesButton' type='submit'>Bordered tables</button>" +
+            "<button class='btn btn-default btn-xs' id='hoverRowsButton' type='submit'>Hover rows</button>"
         "</div>";
     return node;
 }
 
 $(document).ready(function() {
+    /**
+     *
+     */
     $(".gridCustomizeInput").on("keyup", function () {
         $(this).closest(".gridSystem").find(".row").empty();
         var inputList = $(this).val().split(" ", 12);
@@ -57,19 +96,54 @@ $(document).ready(function() {
         }
     });
 
+    /**
+     *
+     */
+    $(".canvas").on("keyup", "#setTableRow, #setTableColumn", function(e){
+        e.preventDefault();
+        var userInputRow = $(this).closest(".innerElementProperties").find("#setTableRow").val();
+        var userInputColumn = $(this).closest(".innerElementProperties").find("#setTableColumn").val();
+        var uid = $(this).parent().attr("value");
+        $("#"+uid).empty();
+        for(var rowIndex=0; rowIndex<userInputRow; rowIndex++){
+            var row = document.querySelector("#"+uid).insertRow(rowIndex);
+            for(var columnIndex=0; columnIndex<userInputColumn; columnIndex++){
+                var column = row.insertCell(columnIndex);
+                column.innerHTML="Row-" + rowIndex + " Column-" + columnIndex;
+            }
+        }
+    });
     $(".canvas").on("click", "#stripedRowsButton", function(e){
         e.preventDefault();
-        $(this).closest(".component").find(".view").find("table").toggleClass("table-striped");
+        var uid = $(this).parent().attr("value");
+        if (uid){
+            $("#"+uid).toggleClass("table-striped");
+        } else{
+            $(this).closest(".component").find(".view").find("table").toggleClass("table-striped");
+        }
     });
     $(".canvas").on("click", "#borderedTablesButton", function(e){
         e.preventDefault();
-        $(this).closest(".component").find(".view").find("table").toggleClass("table-bordered");
+        var uid = $(this).parent().attr("value");
+        if (uid){
+            $("#"+uid).toggleClass("table-bordered");
+        } else{
+            $(this).closest(".component").find(".view").find("table").toggleClass("table-bordered");
+        }
     });
     $(".canvas").on("click", "#hoverRowsButton", function(e){
         e.preventDefault();
-        $(this).closest(".component").find(".view").find("table").toggleClass("table-hover");
+        var uid = $(this).parent().attr("value");
+        if (uid){
+            $("#"+uid).toggleClass("table-hover");
+        } else{
+            $(this).closest(".component").find(".view").find("table").toggleClass("table-hover");
+        }
     });
 
+    /**
+     *
+     */
     $(".canvas").on("click", "#inlineFormButton", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find("form").toggleClass("form-inline");
@@ -87,6 +161,9 @@ $(document).ready(function() {
         }
     });
 
+    /**
+     *
+     */
     $(".canvas").on("click", "#inlineFormGroupButton", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find("form").toggleClass("form-inline");
@@ -101,71 +178,67 @@ $(document).ready(function() {
         toggleAttribute(selector, "disabled", "disabled");
     });
 
+    /**
+     *
+     */
     $(".canvas").on("click", "#defaultStyleButton", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find("button").removeClass("btn-default btn-primary btn-success btn-info btn-warning btn-danger btn-link");
         $(this).closest(".component").find(".view").find("button").addClass("btn-default");
     });
-
     $(".canvas").on("click", "#primaryStyleButton", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find("button").removeClass("btn-default btn-primary btn-success btn-info btn-warning btn-danger btn-link");
         $(this).closest(".component").find(".view").find("button").addClass("btn-primary");
     });
-
     $(".canvas").on("click", "#successStyleButton", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find("button").removeClass("btn-default btn-primary btn-success btn-info btn-warning btn-danger btn-link");
         $(this).closest(".component").find(".view").find("button").addClass("btn-success");
     });
-
     $(".canvas").on("click", "#infoStyleButton", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find("button").removeClass("btn-default btn-primary btn-success btn-info btn-warning btn-danger btn-link");
         $(this).closest(".component").find(".view").find("button").addClass("btn-info");
     });
-
     $(".canvas").on("click", "#warningStyleButton", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find("button").removeClass("btn-default btn-primary btn-success btn-info btn-warning btn-danger btn-link");
         $(this).closest(".component").find(".view").find("button").addClass("btn-warning");
     });
-
     $(".canvas").on("click", "#dangerStyleButton", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find("button").removeClass("btn-default btn-primary btn-success btn-info btn-warning btn-danger btn-link");
         $(this).closest(".component").find(".view").find("button").addClass("btn-danger");
     });
-
     $(".canvas").on("click", "#linkStyleButton", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find("button").removeClass("btn-default btn-primary btn-success btn-info btn-warning btn-danger btn-link");
         $(this).closest(".component").find(".view").find("button").addClass("btn-link");
     });
-
     $(".canvas").on("click", "#largeSizeButton", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find("button").removeClass("btn-lg btn-sm btn-xs");
         $(this).closest(".component").find(".view").find("button").addClass("btn-lg");
     });
-
     $(".canvas").on("click", "#mediumSizeButton", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find("button").removeClass("btn-lg btn-sm btn-xs");
     });
-
     $(".canvas").on("click", "#smallSizeButton", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find("button").removeClass("btn-lg btn-sm btn-xs");
         $(this).closest(".component").find(".view").find("button").addClass("btn-sm");
     });
-
     $(".canvas").on("click", "#extraSmallSizeButton", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find("button").removeClass("btn-lg btn-sm btn-xs");
         $(this).closest(".component").find(".view").find("button").addClass("btn-xs");
     });
 
+    /**
+     *
+     */
     $(".canvas").on("click", "#imageDefaultShape", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find("img").removeClass("img-rounded img-circle img-thumbnail");
@@ -186,6 +259,9 @@ $(document).ready(function() {
         $(this).closest(".component").find(".view").find("img").toggleClass("img-thumbnail");
     });
 
+    /**
+     *
+     */
     $(".canvas").on("keyup", "#setDropdownAmounts", function(e){
         e.preventDefault();
         var uid = $(this).parent().attr("value");
@@ -235,6 +311,9 @@ $(document).ready(function() {
         }
     });
 
+    /**
+     *
+     */
     $(".canvas").on("click", "#largeButtonGroup", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find("#buttonGroup").removeClass("btn-group-lg btn-group-sm btn-group-xs");
@@ -296,6 +375,9 @@ $(document).ready(function() {
         $(this).closest(".component").find(".view").before(innerNode);
     });
 
+    /**
+     *
+     */
     $(".canvas").on("click", "#emptyTabNavbar", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".innerElementProperties").remove();
@@ -331,6 +413,9 @@ $(document).ready(function() {
         $(this).closest(".component").find(".view").find(".nav-tabs").toggleClass("nav-justified");
     });
 
+    /**
+     *
+     */
     $(".canvas").on("click", "#emptyPillNavbar", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".innerElementProperties").remove();
@@ -370,6 +455,9 @@ $(document).ready(function() {
         $(this).closest(".component").find(".view").find(".nav-pills").toggleClass("nav-stacked");
     });
 
+    /**
+     *
+     */
     $(".canvas").on("click", "#navbarFixedToTp", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find(".navbar").toggleClass("navbar-fixed-top");
@@ -394,6 +482,9 @@ $(document).ready(function() {
         };
     });
 
+    /**
+     *
+     */
     $(".canvas").on("click", "#breadcrumbEmpty", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find(".breadcrumb").empty();
@@ -409,6 +500,9 @@ $(document).ready(function() {
         breadcrumb.append("<li class='active' contenteditable='true'>Breadcrumb " + (amount+1) + "</li>");
     });
 
+    /**
+     *
+     */
     $(".canvas").on("click", "#largePagination", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find(".pagination").removeClass("pagination-lg pagination-sm");
@@ -424,6 +518,9 @@ $(document).ready(function() {
         $(this).closest(".component").find(".view").find(".pagination").addClass("pagination-sm");
     });
 
+    /**
+     *
+     */
     $(".canvas").on("click", "#oneThumbnail", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").empty();
@@ -457,5 +554,306 @@ $(document).ready(function() {
     $(".canvas").on("click", ".thumbnailImage", function(e){
         e.preventDefault();
         $(this).closest(".thumbnail").find("input").trigger('click');
+    });
+
+    /**
+     *
+     */
+    $(".canvas").on("click", "#successAlert", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".alert").removeClass("alert-success alert-info alert-warning alert-danger");
+        $(this).closest(".component").find(".view").find(".alert").addClass("alert-success")
+    });
+    $(".canvas").on("click", "#infoAlert", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".alert").removeClass("alert-success alert-info alert-warning alert-danger");
+        $(this).closest(".component").find(".view").find(".alert").addClass("alert-info")
+    });
+    $(".canvas").on("click", "#warningAlert", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".alert").removeClass("alert-success alert-info alert-warning alert-danger");
+        $(this).closest(".component").find(".view").find(".alert").addClass("alert-warning")
+    });
+    $(".canvas").on("click", "#dangerAlert", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".alert").removeClass("alert-success alert-info alert-warning alert-danger");
+        $(this).closest(".component").find(".view").find(".alert").addClass("alert-danger")
+    });
+    $(".canvas").on("click", "#dismissibleAlerts", function(e){
+        e.preventDefault();
+        var selector = $(this).closest(".component").find(".view").find(".alert");
+        selector.toggleClass("alert-dismissible");
+        if (selector.hasClass("alert-dismissible")){
+            selector.prepend("<button class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>")
+        } else {
+            selector.find("button").remove();
+        }
+    });
+
+    /**
+     *
+     */
+    $(".canvas").on("click", "#progressbarWithLabel", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find("span").toggleClass("sr-only");
+    });
+    $(".canvas").on("click", "#successProgressbar", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".progress-bar").removeClass("progress-bar-success progress-bar-info progress-bar-warning progress-bar-danger");
+        $(this).closest(".component").find(".view").find(".progress-bar").addClass("progress-bar-success");
+    });
+    $(".canvas").on("click", "#infoProgressbar", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".progress-bar").removeClass("progress-bar-success progress-bar-info progress-bar-warning progress-bar-danger");
+        $(this).closest(".component").find(".view").find(".progress-bar").addClass("progress-bar-info");
+    });
+    $(".canvas").on("click", "#warningProgressbar", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".progress-bar").removeClass("progress-bar-success progress-bar-info progress-bar-warning progress-bar-danger");
+        $(this).closest(".component").find(".view").find(".progress-bar").addClass("progress-bar-warning");
+    });
+    $(".canvas").on("click", "#dangerProgressbar", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".progress-bar").removeClass("progress-bar-success progress-bar-info progress-bar-warning progress-bar-danger");
+        $(this).closest(".component").find(".view").find(".progress-bar").addClass("progress-bar-danger");
+    });
+    $(".canvas").on("click", "#stripedProgressbar", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".progress-bar").toggleClass("progress-bar-striped");
+    });
+    $(".canvas").on("click", "#animatedProgressbar", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".progress-bar").toggleClass("active");
+    });
+
+    /**
+     *
+     */
+    $(".canvas").on("click", "#leftMediaObject", function(e){
+        e.preventDefault();
+        var media = $(this).closest(".component").find(".view").find(".media");
+        if (media.find(".media-right").length){
+            var mediaObjectHtml = media.find(".media-right").html();
+            media.find(".media-right").remove();
+            media.prepend("<div class=\"media-left\">" + mediaObjectHtml + "</div>");
+        }
+    });
+    $(".canvas").on("click", "#rightMediaObject", function(e){
+        e.preventDefault();
+        var media = $(this).closest(".component").find(".view").find(".media");
+        if (media.find(".media-left").length){
+            var mediaObjectHtml = media.find(".media-left").html();
+            media.find(".media-left").remove();
+            media.append("<div class=\"media-right\">" + mediaObjectHtml + "</div>");
+        }
+    });
+    $(".canvas").on("click", "#topMediaObject", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".media-left, .media-right").removeClass("media-middle media-bottom");
+    });
+    $(".canvas").on("click", "#middleMediaObject", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".media-left, .media-right").removeClass("media-middle media-bottom");
+        $(this).closest(".component").find(".view").find(".media-left, .media-right").addClass("media-middle");
+    });
+    $(".canvas").on("click", "#bottomMediaObject", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".media-left, .media-right").removeClass("media-middle media-bottom");
+        $(this).closest(".component").find(".view").find(".media-left, .media-right").addClass("media-bottom");
+    });
+    $(".canvas").on("click", ".media-object", function(e){
+        e.preventDefault();
+        $(this).closest(".media").find("input").trigger('click');
+    });
+
+    /**
+     *
+     */
+    $(".canvas").on("keyup", "#setListGroupAmounts", function(e){
+        e.preventDefault();
+        var uid = $(this).parent().attr("value");
+        $("#"+uid).empty();
+        for(var count=0; count<$(this).val(); count++){
+            $("#"+uid).append(
+                "<li class='list-group-item' contenteditable='true'>List Group Item</li>");
+        }
+    });
+    $(".canvas").on("click", "#listGroupEmpty", function(e){
+        e.preventDefault();
+        var uid = $(this).parent().attr("value");
+        if (uid){
+            $("#"+uid).empty();
+        } else{
+            $(this).closest(".component").find(".view").find(".list-group").empty();
+        }
+    });
+    $(".canvas").on("click", "#listGroupAddItems", function(e){
+        e.preventDefault();
+        var node = "<li class=\"list-group-item\" contenteditable=\"true\">List Group Item</li>";
+        var uid = $(this).parent().attr("value");
+        if (uid){
+            $("#"+uid).append(node);
+        } else{
+            $(this).closest(".component").find(".view").find(".list-group").append(node);
+        }
+    });
+    $(".canvas").on("click", "#listGroupAddLinkItems", function(e){
+        e.preventDefault();
+        var node = "<a href=\"#\" class=\"list-group-item\" contenteditable=\"true\">Link Item</a>";
+        var uid = $(this).parent().attr("value");
+        if (uid){
+            $("#"+uid).append(node);
+        } else{
+            $(this).closest(".component").find(".view").find(".list-group").append(node);
+        }
+    });
+    $(".canvas").on("click", "#listGroupAddButtonItems", function(e){
+        e.preventDefault();
+        var node = "<button type=\"button\" class=\"list-group-item\" contenteditable=\"true\">Button Item</button>";
+        var uid = $(this).parent().attr("value");
+        if (uid){
+            $("#"+uid).append(node);
+        } else{
+            $(this).closest(".component").find(".view").find(".list-group").append(node);
+        }
+    });
+    $(".canvas").on("click", "#listGroupAddDisabledItems", function(e){
+        e.preventDefault();
+        var node = "<a href=\"#\" class=\"list-group-item disabled\" contenteditable=\"true\">Disabled Item</a>";
+        var uid = $(this).parent().attr("value");
+        if (uid){
+            $("#"+uid).append(node);
+        } else{
+            $(this).closest(".component").find(".view").find(".list-group").append(node);
+        }
+    });
+    $(".canvas").on("click", "#listGroupAddContent", function(e){
+        e.preventDefault();
+        var node = "<a href=\"#\" class=\"list-group-item\"><h4 class=\"list-group-item-heading\" contenteditable=\"true\">List Group Item Heading</h4><p class=\"list-group-item-text\" contenteditable=\"true\">List group content. List group content. List group content. List group content. List group content. List group content.</p></a>";
+        var uid = $(this).parent().attr("value");
+        if (uid){
+            $("#"+uid).append(node);
+        } else{
+            $(this).closest(".component").find(".view").find(".list-group").append(node);
+        }
+    });
+
+    /**
+     *
+     */
+    $(".canvas").on("click", "#panelEmpty", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".innerElementProperties").remove();
+        $(this).closest(".component").find(".view").find(".panel").empty();
+    });
+    $(".canvas").on("click", "#panelAddHeading", function(e){
+        e.preventDefault();
+        var selector = $(this).closest(".component").find(".view").find(".panel");
+        if (selector.find(".panel-heading").length){
+            selector.find(".panel-heading").remove();
+        } else {
+            var node = "<div class=\"panel-heading\"><h3 class=\"panel-title\" contenteditable=\"true\">Panel Heading</h3></div>";
+            selector.prepend(node);
+        }
+    });
+    $(".canvas").on("click", "#panelAddFooter", function(e){
+        e.preventDefault();
+        var selector = $(this).closest(".component").find(".view").find(".panel");
+        if (selector.find(".panel-footer").length){
+            selector.find(".panel-footer").remove();
+        } else {
+            var node = "<div class=\"panel-footer\" contenteditable=\"true\">Panel Footer</div>";
+            selector.append(node);
+        }
+    });
+    $(".canvas").on("click", "#defaultPanel", function(e){
+        e.preventDefault();
+        var selector = $(this).closest(".component").find(".view").find(".panel");
+        selector.removeClass("panel-default panel-primary panel-success panel-info panel-warning panel-danger");
+        selector.addClass("panel-default");
+    });
+    $(".canvas").on("click", "#primaryPanel", function(e){
+        e.preventDefault();
+        var selector = $(this).closest(".component").find(".view").find(".panel");
+        selector.removeClass("panel-default panel-primary panel-success panel-info panel-warning panel-danger");
+        selector.addClass("panel-primary");
+    });
+    $(".canvas").on("click", "#successPanel", function(e){
+        e.preventDefault();
+        var selector = $(this).closest(".component").find(".view").find(".panel");
+        selector.removeClass("panel-default panel-primary panel-success panel-info panel-warning panel-danger");
+        selector.addClass("panel-success");
+    });
+    $(".canvas").on("click", "#infoPanel", function(e){
+        e.preventDefault();
+        var selector = $(this).closest(".component").find(".view").find(".panel");
+        selector.removeClass("panel-default panel-primary panel-success panel-info panel-warning panel-danger");
+        selector.addClass("panel-info");
+    });
+    $(".canvas").on("click", "#warningPanel", function(e){
+        e.preventDefault();
+        var selector = $(this).closest(".component").find(".view").find(".panel");
+        selector.removeClass("panel-default panel-primary panel-success panel-info panel-warning panel-danger");
+        selector.addClass("panel-warning");
+    });
+    $(".canvas").on("click", "#dangerPanel", function(e){
+        e.preventDefault();
+        var selector = $(this).closest(".component").find(".view").find(".panel");
+        selector.removeClass("panel-default panel-primary panel-success panel-info panel-warning panel-danger");
+        selector.addClass("panel-danger");
+    });
+    $(".canvas").on("click", "#panelAddTables", function(e){
+        e.preventDefault();
+        var selector = $(this).closest(".component").find(".view").find(".panel");
+        var node =
+            "<table class=\"table\" contenteditable=\"true\">" +
+                "<tbody>" +
+                    "<tr><td>Row-0 Column-0</td><td>Row-0 Column-1</td><td>Row-0 Column-2</td></tr>" +
+                    "<tr><td>Row-1 Column-0</td><td>Row-1 Column-1</td><td>Row-1 Column-2</td></tr>" +
+                    "<tr><td>Row-2 Column-0</td><td>Row-2 Column-1</td><td>Row-2 Column-2</td></tr>" +
+                "</tbody>" +
+            "</table>";
+        if (selector.find(".panel-footer").length){
+            selector.find(".panel-footer").before(node);
+        } else {
+            selector.append(node);
+        }
+        selector.find("table").last().uniqueId();
+        var uniqueId = selector.find("table").last().attr("id");
+        var innerPropertyNode = renderInnerTableProperties(uniqueId);
+        $(this).closest(".component").find(".view").before(innerPropertyNode);
+    });
+    $(".canvas").on("click", "#panelAddListGroups", function(e){
+        e.preventDefault();
+        var selector = $(this).closest(".component").find(".view").find(".panel");
+        var node =
+            "<div class='list-group'>" +
+                "<li class='list-group-item' contenteditable='true'>List Group Item</li>" +
+                "<li class='list-group-item' contenteditable='true'>List Group Item</li>" +
+                "<li class='list-group-item' contenteditable='true'>List Group Item</li>" +
+            "</div>";
+        if (selector.find(".panel-footer").length){
+            selector.find(".panel-footer").before(node);
+        } else {
+            selector.append(node);
+        }
+        selector.find(".list-group").last().uniqueId();
+        var uniqueId = selector.find(".list-group").last().attr("id");
+        var innerPropertyNode = renderInnerListGroupProperties(uniqueId);
+        $(this).closest(".component").find(".view").before(innerPropertyNode);
+    });
+
+    /**
+     *
+     */
+    $(".canvas").on("click", "#16by9ResponsiveEmbed", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".embed-responsive").removeClass("embed-responsive-16by9 embed-responsive-4by3");
+        $(this).closest(".component").find(".view").find(".embed-responsive").addClass("embed-responsive-16by9");
+    });
+    $(".canvas").on("click", "#4by3ResponsiveEmbed", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".embed-responsive").removeClass("embed-responsive-16by9 embed-responsive-4by3");
+        $(this).closest(".component").find(".view").find(".embed-responsive").addClass("embed-responsive-4by3");
     });
 });
