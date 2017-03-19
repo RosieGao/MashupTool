@@ -4,7 +4,7 @@
         <span href="#close" class="dragButton"><i class="fa fa-arrows"></i></span>
         <span class="properties">
             <form style="display: inline-block">
-                <input type="file" onchange="imageChange(this);"/>
+                <input type="file" onchange="imageChange(this)"/>
             </form>
             <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown" aria-expanded="false">

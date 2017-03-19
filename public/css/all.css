@@ -3422,6 +3422,9 @@ body{
 .previewLayout .leftPanelContainer{
     display: none;
 }
+.previewLayout .propertyPanelContainer{
+    display: none;
+}
 .previewLayout .canvasContainer{
     margin: 0px;
     width: 100%;

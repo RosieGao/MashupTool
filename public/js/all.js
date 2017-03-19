@@ -84,13 +84,23 @@ function toggleAttribute(selector, attr, value){
     }
 }
 
-function imageChange(e){
-    if (e.files && e.files[0]) {
+function imageChange(obj){
+    if (obj.files && obj.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
             $(".canvas .imageComponent .view img").attr("src", e.target.result);
-        }
-        reader.readAsDataURL(e.files[0]);
+        };
+        reader.readAsDataURL(obj.files[0]);
+    }
+}
+
+function thumbnailImageUpload(obj){
+    if (obj.files && obj.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e){
+            $(obj).closest(".thumbnail").find("img").attr("src", e.target.result);
+        };
+        reader.readAsDataURL(obj.files[0]);
     }
 }
 
@@ -436,6 +446,95 @@ $(document).ready(function() {
     $(".canvas").on("click", "#stackablePillNavbar", function(e){
         e.preventDefault();
         $(this).closest(".component").find(".view").find(".nav-pills").toggleClass("nav-stacked");
+    });
+
+    $(".canvas").on("click", "#navbarFixedToTp", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".navbar").toggleClass("navbar-fixed-top");
+    });
+    $(".canvas").on("click", "#navbarFixedToBottom", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".navbar").toggleClass("navbar-fixed-bottom");
+    });
+    $(".canvas").on("click", "#navbarStaticTop", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".navbar").toggleClass("navbar-static-top");
+    });
+    $(".canvas").on("click", "#navbarInverted", function(e){
+        e.preventDefault();
+        var selector = $(this).closest(".component").find(".view").find(".navbar");
+        if (selector.hasClass("navbar-default")){
+            selector.removeClass("navbar-default");
+            selector.addClass("navbar-inverse");
+        } else {
+            selector.removeClass("navbar-inverse");
+            selector.addClass("navbar-default");
+        };
+    });
+
+    $(".canvas").on("click", "#breadcrumbEmpty", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".breadcrumb").empty();
+    });
+    $(".canvas").on("click", "#breadcrumbAddChild", function(e){
+        e.preventDefault();
+        var breadcrumb = $(this).closest(".component").find(".view").find(".breadcrumb");
+        var amount = breadcrumb.children().length;
+        if (amount > 0) {
+            breadcrumb.find("li:last-child").remove();
+            breadcrumb.append("<li><a href='#' contenteditable='true'>Breadcrumb " + (amount) + "</a></li>");
+        }
+        breadcrumb.append("<li class='active' contenteditable='true'>Breadcrumb " + (amount+1) + "</li>");
+    });
+
+    $(".canvas").on("click", "#largePagination", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".pagination").removeClass("pagination-lg pagination-sm");
+        $(this).closest(".component").find(".view").find(".pagination").addClass("pagination-lg");
+    });
+    $(".canvas").on("click", "#mediumPagination", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".pagination").removeClass("pagination-lg pagination-sm");
+    });
+    $(".canvas").on("click", "#smallPagination", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").find(".pagination").removeClass("pagination-lg pagination-sm");
+        $(this).closest(".component").find(".view").find(".pagination").addClass("pagination-sm");
+    });
+
+    $(".canvas").on("click", "#oneThumbnail", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").empty();
+        $(this).closest(".component").find(".view").load('/componentInnerHTML.html #oneThumbnailView');
+    });
+    $(".canvas").on("click", "#twoThumbnails", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").empty();
+        $(this).closest(".component").find(".view").load('/componentInnerHTML.html #twoThumbnailsView');
+    });
+    $(".canvas").on("click", "#threeThumbnails", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").empty();
+        $(this).closest(".component").find(".view").load('/componentInnerHTML.html #threeThumbnailsView');
+    });
+    $(".canvas").on("click", "#fourThumbnails", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").empty();
+        $(this).closest(".component").find(".view").load('/componentInnerHTML.html #fourThumbnailsView');
+    });
+    $(".canvas").on("click", "#sixThumbnails", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").empty();
+        $(this).closest(".component").find(".view").load('/componentInnerHTML.html #sixThumbnailsView');
+    });
+    $(".canvas").on("click", "#sixThumbnails", function(e){
+        e.preventDefault();
+        $(this).closest(".component").find(".view").empty();
+        $(this).closest(".component").find(".view").load('/componentInnerHTML.html #sixThumbnailsView');
+    });
+    $(".canvas").on("click", ".thumbnailImage", function(e){
+        e.preventDefault();
+        $(this).closest(".thumbnail").find("input").trigger('click');
     });
 });
 
