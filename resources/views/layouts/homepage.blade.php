@@ -10,9 +10,9 @@
 <body>
 <div class="container">
     <div class="row vertical-center-row">
-        <div class="text-center" style="width: 100%;">
+        <a href="{{route('project.home', [ 'project_id' => $project->id ])}}" class="text-center" style="width: 100%;">
             <i class="fa fa-plus-square-o" aria-hidden="true" style="font-size: 20em;"></i>
-        </div>
+        </a>
     </div>
 </div>
 <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>
