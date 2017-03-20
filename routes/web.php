@@ -19,7 +19,7 @@ Route::post('login', array('uses' => 'Auth\LoginController@login'));
 
 Route::get('/logout', array('uses' => 'Auth\LoginController@logout'));
 
-Route::get('/homepage', function () {
+Route::get('/home', function () {
     return view('layouts.homepage');
 });
 
