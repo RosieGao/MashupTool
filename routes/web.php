@@ -23,6 +23,10 @@ Route::get('/homepage', function () {
     return view('layouts.homepage');
 });
 
+Route::get('/mashup', function () {
+    return view('layouts.app');
+});
+
 Route::get('/{project_id}', [
     'as' => 'project.home',
     'uses' => 'ProjectController@index',
