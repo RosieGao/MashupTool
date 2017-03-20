@@ -27,7 +27,7 @@ Route::get('/mashup', function () {
     return view('layouts.app');
 });
 
-Route::get('/{project_id}', [
+Route::get('/mashup/{project_id}', [
     'as' => 'project.home',
     'uses' => 'ProjectController@index',
 ])->where('project_id', Uuid::VALID_PATTERN);
