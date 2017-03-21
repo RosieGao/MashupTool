@@ -36,6 +36,7 @@
                         </div>
                         <canvas_selector_component></canvas_selector_component>
                     </ul>
+                    <page_selector_component></page_selector_component>
                 </div>
             </nav>
         </div>

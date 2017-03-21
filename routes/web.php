@@ -23,12 +23,22 @@ Route::get('/homepage', function () {
     return view('layouts.homepage');
 });
 
-Route::get('/mashup', [
+Route::get('/project', [
     'as' => 'project.create',
     'uses' => 'ProjectController@create',
 ]);
 
-Route::get('/mashup/{project_id}', [
+Route::get('/project/{project_id}', [
     'as' => 'project.home',
-    'uses' => 'ProjectController@index',
+    'uses' => 'ProjectController@home',
+])->where('project_id', Uuid::VALID_PATTERN);
+
+Route::get('/project/{project_id}/page',  [
+    'as' => 'page.create',
+    'uses' => 'PageController@create',
+])->where('project_id', Uuid::VALID_PATTERN);
+
+Route::get('/project/{project_id}/page/{page_name}', [
+    'as' => 'page.home',
+    'uses' => 'PageController@home',
 ])->where('project_id', Uuid::VALID_PATTERN);
