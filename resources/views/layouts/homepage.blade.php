@@ -10,9 +10,7 @@
 <body>
 <div class="container">
     <div class="row vertical-center-row">
-        {{ Form::open([ 'route' => 'user.add_project', $project->id ], 'method' => 'post' ) }}
         <a href="{{ route('project.create') }}" class="text-center" style="width: 100%;">
-        <a href="{{ url('/mashup') }}" class="text-center" style="width: 100%;">
             <i class="fa fa-plus-square-o" aria-hidden="true" style="font-size: 20em;"></i>
         </a>
     </div>

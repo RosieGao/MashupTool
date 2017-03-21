@@ -19,13 +19,14 @@ Route::post('login', array('uses' => 'Auth\LoginController@login'));
 
 Route::get('/logout', array('uses' => 'Auth\LoginController@logout'));
 
-Route::get('/home', function () {
+Route::get('/homepage', function () {
     return view('layouts.homepage');
 });
 
-Route::get('/mashup', function () {
-    return view('layouts.app');
-});
+Route::get('/mashup', [
+    'as' => 'project.create',
+    'uses' => 'ProjectController@create',
+]);
 
 Route::get('/mashup/{project_id}', [
     'as' => 'project.home',

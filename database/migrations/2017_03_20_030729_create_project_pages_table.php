@@ -15,7 +15,7 @@ class CreateProjectPagesTable extends Migration
     {
         Schema::create('project_pages', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->string('name')->nullable();
             $table->uuid('project_id')->nullable();
             $table->timestamps();
         });
