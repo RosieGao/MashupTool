@@ -26,6 +26,7 @@
                                 Preview
                             </button>
                             <button type="button" class="btn btn-default navbar-btn" id="save">
+                                <p id="saveMashupPath" style="display: none">{{ $storage_path }}</p>
                                 <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
                                 Save
                             </button>
@@ -36,7 +37,6 @@
                         </div>
                         <canvas_selector_component></canvas_selector_component>
                     </ul>
-                    <page_selector_component></page_selector_component>
                 </div>
             </nav>
         </div>
@@ -52,6 +52,8 @@
                     <property_panel_component></property_panel_component>
                 </div>
             </div>
+        </div>
+        <div id='savedMashupHtml' class="container-fluid" style="display: none">
         </div>
     </div>
     <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>

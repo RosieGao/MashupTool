@@ -11,7 +11,7 @@ class ProjectController extends Controller
     {
         $pages= \DB::table('project_pages')->where('project_id', $project_id)->get();
 
-        return \View::make('layouts.project', [ 'pID' => $project_id])->with(compact('pages'));;
+        return \View::make('layouts.project', [ 'pID' => $project_id])->with(compact('pages'));
     }
 
     public function create(){

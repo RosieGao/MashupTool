@@ -6,9 +6,15 @@ use Carbon\Carbon;
 
 class PageController extends Controller
 {
-    public function home()
+    public function home($project_id, $page_name)
     {
-        return view('layouts.app');
+        $storage_path = \DB::table('project_pages')
+            ->where('project_id', $project_id)
+            ->where('name', $page_name)
+            ->first()
+            ->storage_path;
+
+        return \View::make('layouts.app')->with(compact('storage_path'));
     }
 
     public function create($project_id){
