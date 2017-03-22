@@ -1,6 +1,7 @@
 function saveMashup(){
     $("#savedMashupHtml").html($(".canvas").html());
     $("#savedMashupHtml").find(".removeButton, .dragButton, .properties, .innerElementProperties, .preview").remove();
+    $("#saveSuccessMsg").show().delay(3000).fadeOut();
 }
 
 $(document).ready(function() {

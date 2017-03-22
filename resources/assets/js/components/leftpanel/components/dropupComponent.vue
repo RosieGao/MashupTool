@@ -9,7 +9,7 @@
             <button class="btn btn-default btn-xs" id="addDropdownDividers" type="submit">Add Dividers</button>
         </span>
         <div class="preview">
-            <img src="/images/wait.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/wait.png">
             <span>Dropups</span>
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="# of options" v-model="userInputNumberOfOptions" v-on:keyup="changeNumberOfOptions">

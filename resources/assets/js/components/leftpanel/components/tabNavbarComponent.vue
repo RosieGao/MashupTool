@@ -9,7 +9,7 @@
             <button class="btn btn-default btn-xs" id="justifiedTabNavbar" type="submit">Justified</button>
         </span>
         <div class="preview">
-            <img src="/images/nav.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/nav.png">
             <span>Tab Navbars</span>
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="# of options" v-model="userInputNumberOfTabs" v-on:keyup="changeNumberOfTabs">

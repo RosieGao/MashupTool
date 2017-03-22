@@ -17,7 +17,7 @@
             </div>
         </span>
         <div class="preview">
-            <img src="/images/mediaobject.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/mediaobject.png">
             <span>Media object</span>
         </div>
         <div class="view">
@@ -25,7 +25,7 @@
                 <div class="media-left">
                     <a href="#">
                         <input type="file" onchange="mediaObjectUpload(this)" style="display:none"/>
-                        <img class="media-object" src="/images/mediaobject.png" alt="Media object" style="width: 64px; height: 64px">
+                        <img class="media-object" src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/mediaobject.png" alt="Media object" style="width: 64px; height: 64px">
                     </a>
                 </div>
                 <div class="media-body" contenteditable="true">

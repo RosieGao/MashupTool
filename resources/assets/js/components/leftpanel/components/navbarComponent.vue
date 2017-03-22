@@ -9,7 +9,7 @@
             <button class="btn btn-default btn-xs" id="navbarInverted" type="submit">Inverted navbar</button>
         </span>
         <div class="preview">
-            <img src="/images/navbar.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/navbar.png">
             <span>Navbars</span>
         </div>
         <div class="view">

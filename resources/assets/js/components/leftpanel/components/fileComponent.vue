@@ -3,7 +3,7 @@
         <span href="#close" class="removeButton"><i class="fa fa-times"></i></span>
         <span href="#close" class="dragButton"><i class="fa fa-arrows"></i></span>
         <div class="preview">
-            <img src="/images/choosefiles.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/choosefiles.png">
             <span>Choose Files</span>
         </div>
         <div class="view">

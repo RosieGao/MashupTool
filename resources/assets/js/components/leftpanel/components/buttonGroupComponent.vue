@@ -20,7 +20,7 @@
             <button class="btn btn-default btn-xs" id="buttonGroupAddDropdowns" type="submit">Add Dropdowns</button>
         </span>
         <div class="preview">
-            <img src="/images/wait.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/wait.png">
             <span>Button Groups</span>
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="# of options" v-model="userInputNumberOfButtons" v-on:keyup="changeNumberOfButtons">

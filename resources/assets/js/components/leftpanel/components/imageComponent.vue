@@ -23,7 +23,7 @@
             <span>Images</span>
         </div>
         <div class="view">
-            <img src="/images/responsiveimage1.png" class="img-responsive" alt="Responsive Image">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/responsiveimage1.png" class="img-responsive" alt="Responsive Image">
         </div>
     </div>
 </template>

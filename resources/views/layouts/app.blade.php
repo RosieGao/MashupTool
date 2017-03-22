@@ -36,6 +36,9 @@
                             </button>
                         </div>
                         <canvas_selector_component></canvas_selector_component>
+                        <div id="saveSuccessMsg" class="btn-group" style="display:none; margin-left: 15px">
+                            <h4>Saved</h4>
+                        </div>
                     </ul>
                 </div>
             </nav>
