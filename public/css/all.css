@@ -3369,12 +3369,10 @@ body{
 .xsSize{
     width: 500px;
 }
-/*.vertical-center-row{*/
-    /*min-height: 100%;*/
-    /*min-height: 100vh;*/
-    /*display: flex;*/
-    /*align-items: center;*/
-/*}*/
+.createNewButton{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
 /*mashupLayout*/
 .mashupLayout .leftPanelContainer .row, .mashupLayout .canvasContainer .row{

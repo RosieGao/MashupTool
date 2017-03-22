@@ -9,7 +9,9 @@ class ProjectController extends Controller
 {
     public function home($project_id)
     {
-        return \View::make('layouts.project', [ 'pID' => $project_id]);
+        $pages= \DB::table('project_pages')->where('project_id', $project_id)->get();
+
+        return \View::make('layouts.project', [ 'pID' => $project_id])->with(compact('pages'));;
     }
 
     public function create(){
@@ -22,7 +24,7 @@ class ProjectController extends Controller
 
     protected function insertToProjectTable($user, $uuid){
         return \DB::table('projects')->insert(
-            ['id' => $uuid, 'user_id' => $user->id, 'created_at' => Carbon::now()->format('Y-m-d H:i:s')]
+            ['id' => $uuid, 'user_id' => $user->id, 'name' => 'untitled', 'created_at' => Carbon::now()->format('Y-m-d H:i:s')]
         );
     }
 

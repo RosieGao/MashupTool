@@ -9,10 +9,24 @@
 </head>
 <body>
 <div class="container">
-    <div class="row vertical-center-row">
-        <a id='createNewProject' href="{{ route('project.create') }}" class="text-center" style="width: 100%;">
-            <i class="fa fa-plus-square-o" aria-hidden="true" style="font-size: 20em;"></i>
-        </a>
+    <div class="row">
+        <div class="text-center createNewButton">
+            <a style="color: gainsboro" href="{{ route('project.create') }}">
+                <i class="fa fa-plus-square-o" aria-hidden="true" style="font-size: 15em;"></i>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        @foreach ($projects as $project)
+            <div class="col-sm-6 col-md-3">
+                <a style="color: black" class="thumbnail text-center" href="{{ route('project.home', [ 'project_id' => $project->id ])}}">
+                    <i class="fa fa-file-o" aria-hidden="true" style="font-size: 10em;"></i>
+                    <div class="caption">
+                        <h2 contenteditable="true">{{ $project->name }}</h2>
+                    </div>
+                </a>
+            </div>
+        @endforeach
     </div>
 </div>
 <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>

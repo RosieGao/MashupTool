@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
@@ -23,7 +22,7 @@ class PageController extends Controller
 
     protected function insertToPageTable($project_id){
         return \DB::table('project_pages')->insert(
-            ['project_id' => $project_id, 'name' => 'index', 'created_at' => Carbon::now()->format('Y-m-d H:i:s')]
+            ['project_id' => $project_id, 'name' => 'untitled', 'created_at' => Carbon::now()->format('Y-m-d H:i:s')]
         );
     }
 

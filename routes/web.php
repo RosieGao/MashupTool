@@ -19,9 +19,10 @@ Route::post('login', array('uses' => 'Auth\LoginController@login'));
 
 Route::get('/logout', array('uses' => 'Auth\LoginController@logout'));
 
-Route::get('/homepage', function () {
-    return view('layouts.homepage');
-});
+Route::get('/homepage', [
+    'as' => 'homepage',
+    'uses' => 'HomepageController@home',
+]);
 
 Route::get('/project', [
     'as' => 'project.create',
