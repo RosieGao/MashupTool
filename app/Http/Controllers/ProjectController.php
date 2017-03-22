@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use phpDocumentor\Reflection\Types\String_;
 use Ramsey\Uuid\Uuid;
 
 class ProjectController extends Controller
@@ -26,12 +25,10 @@ class ProjectController extends Controller
 
     protected function insertToProjectTable($user, $uuid){
         $id = \DB::table('projects')->get()->count();
-        $name_format = 'untitled%d';
-        $name = sprintf($name_format, $id+1);
+        $name = 'untitled'.($id+1);
 
-        $relative_path = '456\456';
-        $path_format = '%s\%s';
-        $storage_path = sprintf($path_format, $relative_path, $name);
+        $relative_path = '/home/rosiegao/Desktop';
+        $storage_path = $relative_path.'/'.$name;
 
         return \DB::table('projects')->insert(
             [
@@ -49,7 +46,6 @@ class ProjectController extends Controller
     }
 
     protected function createLocalProjectFolder($project){
-
-        return '';
+        return mkdir($project->storage_path);
     }
 }

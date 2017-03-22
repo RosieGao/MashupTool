@@ -24,13 +24,16 @@ class PageController extends Controller
 
     protected function insertToPageTable($project_id){
         $id = \DB::table('project_pages')->where('project_id', $project_id)->get()->count();
-        $name_format = 'untitled%d';
-        $name = sprintf($name_format, $id+1);
+        $name = 'untitled'.($id+1);
+
+        $relative_path = \DB::table('projects')->where('id', $project_id)->first()->storage_path;
+        $storage_path = $relative_path.'/'.$name.'.html';
 
         return \DB::table('project_pages')->insert(
             [
                 'project_id' => $project_id,
                 'name' => $name,
+                'storage_path' => $storage_path,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]
         );
@@ -41,7 +44,9 @@ class PageController extends Controller
     }
 
     protected function createLocalPageFile($page){
-
-        return '';
+        $localPageFile = $page->storage_path;
+        $fh = fopen($localPageFile, 'w');
+        $content = "Here should be the html code";
+        return fwrite($fh, $content);
     }
 }
