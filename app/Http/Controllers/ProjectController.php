@@ -20,15 +20,19 @@ class ProjectController extends Controller
         $this->insertToProjectTable($user, $uuid);
         $project = $this->getLatestProject($user);
         $this->createLocalProjectFolder($project);
+        $this->createCSFile($project);
         return redirect() -> route('project.home', [ 'project_id' => $project->id]);
     }
 
     protected function insertToProjectTable($user, $uuid){
         $id = \DB::table('projects')->get()->count();
-        $name = 'untitled'.($id+1);
+        $name = 'untitledProject'.($id+1);
 
         $relative_path = '/home/rosiegao/Desktop';
         $storage_path = $relative_path.'/'.$name;
+        ECHO $storage_path;
+        $cs_file_path = $storage_path.'/'.$name.'.cs';
+        ECHO $cs_file_path;
 
         return \DB::table('projects')->insert(
             [
@@ -36,6 +40,7 @@ class ProjectController extends Controller
                 'user_id' => $user->id,
                 'name' => $name,
                 'storage_path' => $storage_path,
+                'cs_file_path' => $cs_file_path,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]
         );
@@ -47,5 +52,12 @@ class ProjectController extends Controller
 
     protected function createLocalProjectFolder($project){
         return mkdir($project->storage_path);
+    }
+
+    protected function createCSFile($project){
+        $CSFile = $project->cs_file_path;
+        $fh = fopen($CSFile, 'w');
+        $content = "";
+        return fwrite($fh, $content);
     }
 }

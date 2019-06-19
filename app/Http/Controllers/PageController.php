@@ -30,7 +30,7 @@ class PageController extends Controller
 
     protected function insertToPageTable($project_id){
         $id = \DB::table('project_pages')->where('project_id', $project_id)->get()->count();
-        $name = 'untitled'.($id+1);
+        $name = 'untitledPage'.($id+1);
 
         $relative_path = \DB::table('projects')->where('id', $project_id)->first()->storage_path;
         $storage_path = $relative_path.'/'.$name.'.html';

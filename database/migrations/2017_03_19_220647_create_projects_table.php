@@ -17,6 +17,7 @@ class CreateProjectsTable extends Migration
             $table->uuid('id')->primary();
             $table->string('name')->unique();
             $table->string('storage_path')->unique();
+            $table->string('cs_file_path')->unique();
             $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
@@ -38,6 +39,5 @@ class CreateProjectsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('projects');
-        Schema::dropIfExists('user_projects');
     }
 }
