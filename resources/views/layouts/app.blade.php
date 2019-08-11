@@ -11,7 +11,7 @@
     <div id="app">
         <div class="container-fluid row">
             <nav class="navbar navbar-default">
-                <div class="container-fluid" style="padding-bottom: 15px;">
+                <div class="container-fluid" style="padding-bottom: 15px; padding-top: 15px;">
                     <div class="navbar-header-mashup">
                         <a href="#" class="navbar-brand" style="
     font-weight: bold;
@@ -47,7 +47,7 @@
             </nav>
         </div>
         <div class="container-fluid">
-            <div class="row" style="top: 110px">
+            <div class="row" style="top: 100px">
                 <div class="leftPanelContainer col-md-2">
                     <left_panel_component></left_panel_component>
                 </div>

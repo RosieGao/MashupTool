@@ -9,7 +9,7 @@
 </head>
 <body>
 <nav class="navbar navbar-default">
-    <div class="container-fluid" style="padding-bottom: 15px;">
+    <div class="container-fluid" style="padding-bottom: 15px; padding-top: 15px;">
         <div class="navbar-header-mashup">
             <a href="#" class="navbar-brand" style="
     font-weight: bold;
