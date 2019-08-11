@@ -17,7 +17,7 @@
             </div>
         </span>
         <div class="preview">
-            <img src="/images/thumbnails.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/thumbnails.png">
             <span>Thumbnails</span>
         </div>
         <div class="view">
@@ -25,7 +25,7 @@
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail onehaha">
                         <input type="file" onchange="thumbnailImageUpload(this)" style="display:none"/>
-                        <img class="thumbnailImage" src="/images/responsiveimage1.png" alt="Thumbnail">
+                        <img class="thumbnailImage" src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/responsiveimage1.png" alt="Thumbnail">
                         <div class="caption">
                             <h3 contenteditable="true">Thumbnail label</h3>
                             <p contenteditable="true">Extend Bootstrap's grid system with the thumbnail component to easily display grids of images, videos, text, and more.</p>
@@ -35,7 +35,7 @@
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
                         <input type="file" onchange="thumbnailImageUpload(this)" style="display:none"/>
-                        <img class="thumbnailImage" src="/images/responsiveimage1.png" alt="Thumbnail">
+                        <img class="thumbnailImage" src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/responsiveimage1.png" alt="Thumbnail">
                         <div class="caption">
                             <h3 contenteditable="true">Thumbnail label</h3>
                             <p contenteditable="true">Extend Bootstrap's grid system with the thumbnail component to easily display grids of images, videos, text, and more.</p>
@@ -45,7 +45,7 @@
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
                         <input type="file" onchange="thumbnailImageUpload(this)" style="display:none"/>
-                        <img class="thumbnailImage" src="/images/responsiveimage1.png" alt="Thumbnail">
+                        <img class="thumbnailImage" src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/responsiveimage1.png" alt="Thumbnail">
                         <div class="caption">
                             <h3 contenteditable="true">Thumbnail label</h3>
                             <p contenteditable="true">Extend Bootstrap's grid system with the thumbnail component to easily display grids of images, videos, text, and more.</p>

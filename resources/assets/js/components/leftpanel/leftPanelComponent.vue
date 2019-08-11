@@ -2,7 +2,7 @@
     <div class="leftPanel navbar navbar-default">
         <ul class="nav">
             <li>
-                <a role="button" data-toggle="collapse" href="#gridCollection" aria-expanded="true" aria-controls="gridCollection">
+                <a class="section-title" role="button" data-toggle="collapse" href="#gridCollection" aria-expanded="true" aria-controls="gridCollection">
                     <span>Grid System</span>
                 </a>
                 <ul id="gridCollection" class="collapse in">
@@ -14,7 +14,7 @@
                 </ul>
             </li>
             <li>
-                <a data-toggle="collapse" href="#components" aria-expanded="false">
+                <a class="section-title" data-toggle="collapse" href="#components" aria-expanded="false">
                     <span>Components</span>
                 </a>
                 <ul class="collapse" id="components">
@@ -33,6 +33,7 @@
                     <inline_checkbox_component/>
                     <inline_radio_button_component/>
                     <image_component/>
+                    <icon_component/>
                     <dropdown_component/>
                     <dropup_component/>
                     <button_group_component/>
@@ -53,7 +54,7 @@
                 </ul>
             </li>
             <li>
-                <a data-toggle="collapse" href="#animation" aria-expanded="false">
+                <a class="section-title" data-toggle="collapse" href="#animation" aria-expanded="false">
                     <span>Animation</span>
                 </a>
                 <ul class="collapse" id="animation">
@@ -67,6 +68,13 @@
     .leftPanel{
         height: 100%;
         overflow-x: hidden;
+    }
+    .section-title{
+        background: #000000;
+        font-variant: petite-caps;
+        font-weight: bold;
+        font-size: medium;
+        color: lightgrey;
     }
     #gridCollection, #components, #animation{
         padding: 0;
@@ -128,6 +136,7 @@
     import inline_checkbox_component from './components/inlineCheckboxComponent.vue';
     import inline_radio_button_component from './components/inlineRadioButtonComponent.vue';
     import image_component from './components/imageComponent.vue';
+    import icon_component from './components/iconComponent.vue';
     import dropdown_component from './components/dropdownComponent.vue';
     import dropup_component from './components/dropupComponent.vue';
     import button_group_component from './components/buttonGroupComponent.vue';
@@ -172,6 +181,7 @@
             inline_checkbox_component,
             inline_radio_button_component,
             image_component,
+            icon_component,
             dropdown_component,
             dropup_component,
             button_group_component,

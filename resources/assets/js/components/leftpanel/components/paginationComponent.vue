@@ -15,7 +15,7 @@
             </div>
         </span>
         <div class="preview">
-            <img src="/images/wait.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/wait.png">
             <span>Pagination</span>
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Amount" v-model="userInputAmount" v-on:keyup="changeAmount">

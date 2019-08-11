@@ -8,7 +8,7 @@
             <button class="btn btn-default btn-xs" id="formGroupDisabledButton" type="submit">Disabled</button>
         </span>
         <div class="preview">
-            <img src="/images/formgroup.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/formgroup.png">
             <span>Form Groups</span>
         </div>
         <div class="view">

@@ -7,9 +7,14 @@
             <button class="btn btn-default btn-xs" id="navbarFixedToBottom" type="submit">Fixed to bottom</button>
             <button class="btn btn-default btn-xs" id="navbarStaticTop" type="submit">Static top</button>
             <button class="btn btn-default btn-xs" id="navbarInverted" type="submit">Inverted navbar</button>
+            <button class="btn btn-default btn-xs" id="empty" type="submit">Empty</button>
+            <button class="btn btn-default btn-xs" id="addLeftLink" type="submit">Add Left Link</button>
+            <button class="btn btn-default btn-xs" id="addLeftDropdown" type="submit">Add Left Dropdown</button>
+            <button class="btn btn-default btn-xs" id="addRightLink" type="submit">Add Right Link</button>
+            <button class="btn btn-default btn-xs" id="addRightDropdown" type="submit">Add Right Dropdown</button>
         </span>
         <div class="preview">
-            <img src="/images/navbar.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/navbar.png">
             <span>Navbars</span>
         </div>
         <div class="view">
@@ -41,12 +46,6 @@
                                 </ul>
                             </li>
                         </ul>
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                            <button type="submit" class="btn btn-default" contenteditable="true">Submit</button>
-                        </form>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="#">Link</a></li>
                             <li class="dropdown">

@@ -3,17 +3,17 @@ body{
 }
 .leftPanelContainer{
     position: fixed;
-    top: 80px;
+    top: inherit;
     bottom: 0px;
 }
 .canvasContainer{
     position: fixed;
-    top: 80px;
+    top: inherit;
     bottom: 0px;
 }
 .propertyPanelContainer{
     position: fixed;
-    top: 80px;
+    top: inherit;
     bottom: 0px;
 }
 .lgSize{
@@ -27,6 +27,10 @@ body{
 }
 .xsSize{
     width: 500px;
+}
+.createNewButton{
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 /*mashupLayout*/

@@ -7,7 +7,7 @@
             <button class="btn btn-default btn-xs" id="horizontalFormButton" type="submit">Horizontal form</button>
         </span>
         <div class="preview">
-            <img src="/images/form.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/form.png">
             <span>Forms</span>
         </div>
         <div class="view">

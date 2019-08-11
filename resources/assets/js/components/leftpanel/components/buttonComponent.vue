@@ -30,7 +30,7 @@
             </div>
         </span>
         <div class="preview">
-            <img src="/images/button.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/button.png">
             <span>Buttons</span>
         </div>
         <div class="view">

@@ -23,7 +23,7 @@
             <button class="btn btn-default btn-xs" id="panelAddListGroups" type="submit">Add List Groups</button>
         </span>
         <div class="preview">
-            <img src="/images/panel.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/panel.png">
             <span>Panels</span>
         </div>
         <div class="view">

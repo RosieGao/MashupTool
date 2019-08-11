@@ -5,15 +5,19 @@
     <title>Mashup Tool</title>
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
+    <link href="{{ asset('/fonts/fontawesome/css/all.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body class="mashupLayout">
     <div id="app">
         <div class="container-fluid row">
             <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#">Mashup Tool</a>
+                <div class="container-fluid" style="padding-bottom: 15px; padding-top: 15px;">
+                    <div class="navbar-header-mashup">
+                        <a href="#" class="navbar-brand" style="
+    font-weight: bold;
+    font-size: xx-large;
+    font-variant: petite-caps;">Mashup Tool</a>
                     </div>
                     <ul class="nav navbar-nav navbar-left">
                         <div class="btn-group">
@@ -26,6 +30,7 @@
                                 Preview
                             </button>
                             <button type="button" class="btn btn-default navbar-btn" id="save">
+                                <p id="saveMashupPath" style="display: none">{{ $storage_path }}</p>
                                 <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
                                 Save
                             </button>
@@ -35,12 +40,15 @@
                             </button>
                         </div>
                         <canvas_selector_component></canvas_selector_component>
+                        <div id="saveSuccessMsg" class="btn-group" style="display:none; margin-left: 15px">
+                            <h4>Saved</h4>
+                        </div>
                     </ul>
                 </div>
             </nav>
         </div>
         <div class="container-fluid">
-            <div class="row">
+            <div class="row" style="top: 100px">
                 <div class="leftPanelContainer col-md-2">
                     <left_panel_component></left_panel_component>
                 </div>
@@ -51,6 +59,8 @@
                     <property_panel_component></property_panel_component>
                 </div>
             </div>
+        </div>
+        <div id='savedMashupHtml' class="container-fluid" style="display: none">
         </div>
     </div>
     <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>

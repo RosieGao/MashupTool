@@ -10,7 +10,7 @@
             <button class="btn btn-default btn-xs" id="stackablePillNavbar" type="submit">Stackable</button>
         </span>
         <div class="preview">
-            <img src="/images/wait.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/wait.png">
             <span>Pill Navbars</span>
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="# of options" v-model="userInputNumberOfTabs" v-on:keyup="changeNumberOfTabs">

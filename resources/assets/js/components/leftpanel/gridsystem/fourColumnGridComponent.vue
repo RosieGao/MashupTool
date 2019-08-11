@@ -3,7 +3,7 @@
         <span href="#close" class="removeButton"><i class="fa fa-times"></i></span>
         <span href="#close" class="dragButton"><i class="fa fa-arrows"></i></span>
         <div class="preview">
-            <img src="/images/fourcolumns.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/fourcolumns.png">
             <span>Four Columns</span>
             <input type="text" class="form-control" placeholder="3 3 3 3" v-model="userInput">
         </div>

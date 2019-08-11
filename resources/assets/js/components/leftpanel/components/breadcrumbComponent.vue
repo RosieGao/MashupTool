@@ -7,7 +7,7 @@
             <button class="btn btn-default btn-xs" id="breadcrumbAddChild" type="submit">Add child</button>
         </span>
         <div class="preview">
-            <img src="/images/wait.png">
+            <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/wait.png">
             <span>Breadcrumbs</span>
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Amount" v-model="userInputAmount" v-on:keyup="changeAmount">

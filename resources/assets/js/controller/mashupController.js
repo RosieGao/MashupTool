@@ -1,9 +1,18 @@
+function saveMashup(){
+    $("#savedMashupHtml").html($(".canvas").html());
+    $("#savedMashupHtml").find(".removeButton, .dragButton, .properties, .innerElementProperties, .preview").remove();
+    $("#saveSuccessMsg").show().delay(3000).fadeOut();
+}
+
 $(document).ready(function() {
     $("#mashupMode").on("click", function(){
         $("body").removeClass("previewLayout").addClass("mashupLayout");
     });
     $("#previewMode").on("click", function(){
         $("body").removeClass("mashupLayout").addClass("previewLayout");
+    });
+    $("#save").on("click", function(){
+        saveMashup();
     });
     $("#clear").on("click", function(){
         $(".canvas").empty();
