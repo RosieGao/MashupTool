@@ -33,6 +33,7 @@
                     <inline_checkbox_component/>
                     <inline_radio_button_component/>
                     <image_component/>
+                    <icon_component/>
                     <dropdown_component/>
                     <dropup_component/>
                     <button_group_component/>
@@ -69,10 +70,11 @@
         overflow-x: hidden;
     }
     .section-title{
-        background: lightgray;
+        background: #000000;
         font-variant: petite-caps;
         font-weight: bold;
         font-size: medium;
+        color: lightgrey;
     }
     #gridCollection, #components, #animation{
         padding: 0;
@@ -134,6 +136,7 @@
     import inline_checkbox_component from './components/inlineCheckboxComponent.vue';
     import inline_radio_button_component from './components/inlineRadioButtonComponent.vue';
     import image_component from './components/imageComponent.vue';
+    import icon_component from './components/iconComponent.vue';
     import dropdown_component from './components/dropdownComponent.vue';
     import dropup_component from './components/dropupComponent.vue';
     import button_group_component from './components/buttonGroupComponent.vue';
@@ -178,6 +181,7 @@
             inline_checkbox_component,
             inline_radio_button_component,
             image_component,
+            icon_component,
             dropdown_component,
             dropup_component,
             button_group_component,

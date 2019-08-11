@@ -5,6 +5,7 @@
     <title>Mashup Tool</title>
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
+    <link href="{{ asset('/fonts/fontawesome/css/all.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body class="mashupLayout">
@@ -48,13 +49,13 @@
         </div>
         <div class="container-fluid">
             <div class="row" style="top: 100px">
-                <div class="leftPanelContainer col-md-2">
+                <div class="leftPanelContainer col-md-3">
                     <left_panel_component></left_panel_component>
                 </div>
-                <div class="canvasContainer col-md-8 col-sm-offset-2">
+                <div class="canvasContainer col-md-6 col-sm-offset-3">
                     <canvas_component></canvas_component>
                 </div>
-                <div class="propertyPanelContainer col-md-2 col-sm-offset-10">
+                <div class="propertyPanelContainer col-md-3 col-sm-offset-9">
                     <property_panel_component></property_panel_component>
                 </div>
             </div>
