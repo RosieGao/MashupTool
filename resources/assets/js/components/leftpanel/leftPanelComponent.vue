@@ -2,7 +2,7 @@
     <div class="leftPanel navbar navbar-default">
         <ul class="nav">
             <li>
-                <a role="button" data-toggle="collapse" href="#gridCollection" aria-expanded="true" aria-controls="gridCollection">
+                <a class="section-title" role="button" data-toggle="collapse" href="#gridCollection" aria-expanded="true" aria-controls="gridCollection">
                     <span>Grid System</span>
                 </a>
                 <ul id="gridCollection" class="collapse in">
@@ -14,7 +14,7 @@
                 </ul>
             </li>
             <li>
-                <a data-toggle="collapse" href="#components" aria-expanded="false">
+                <a class="section-title" data-toggle="collapse" href="#components" aria-expanded="false">
                     <span>Components</span>
                 </a>
                 <ul class="collapse" id="components">
@@ -53,7 +53,7 @@
                 </ul>
             </li>
             <li>
-                <a data-toggle="collapse" href="#animation" aria-expanded="false">
+                <a class="section-title" data-toggle="collapse" href="#animation" aria-expanded="false">
                     <span>Animation</span>
                 </a>
                 <ul class="collapse" id="animation">
@@ -67,6 +67,12 @@
     .leftPanel{
         height: 100%;
         overflow-x: hidden;
+    }
+    .section-title{
+        background: lightgray;
+        font-variant: petite-caps;
+        font-weight: bold;
+        font-size: medium;
     }
     #gridCollection, #components, #animation{
         padding: 0;

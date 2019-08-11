@@ -5,6 +5,17 @@
     <title>Mashup Tool Login</title>
 </head>
 <body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header-mashup">
+            <a href="#" class="navbar-brand" style="
+    font-weight: bold;
+    font-size: xx-large;
+    font-variant: petite-caps;
+">Mashup Tool</a>
+        </div>
+    </div>
+</nav>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
