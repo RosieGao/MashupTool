@@ -1,11 +1,11 @@
 <template>
-    <div class="propertyPanel navbar navbar-default">
+    <div class="stylingPanel navbar navbar-default">
         <ul class="nav">
             <li>
                 <a class="section-title" role="button" data-toggle="collapse" href="#linkProperties" aria-expanded="true" aria-controls="gridCollection">
                     <span>Link</span>
                 </a>
-                <ul id="linkProperties" class="propertyList">
+                <ul id="linkProperties" class="stylingList">
                     <div class="form-inline">
                         <label>url</label>
                         <input id="styling_url" type="text" class="form-control"></input>
@@ -16,7 +16,7 @@
                 <a class="section-title" role="button" data-toggle="collapse" href="#borderProperties" aria-expanded="true" aria-controls="gridCollection">
                     <span>Border</span>
                 </a>
-                <ul id="borderProperties" class="propertyList">
+                <ul id="borderProperties" class="stylingList">
                     <div class="form-inline">
                         <label>border-top</label>
                         <input type="text" class="form-control"></input>
@@ -51,7 +51,7 @@
                 <a class="section-title" role="button" data-toggle="collapse" href="#marginProperties" aria-expanded="true" aria-controls="gridCollection">
                     <span>Margin</span>
                 </a>
-                <ul id="marginProperties" class="propertyList">
+                <ul id="marginProperties" class="stylingList">
                     <div class="form-inline">
                         <label>margin-top</label>
                         <input type="text" class="form-control"></input>
@@ -82,7 +82,7 @@
                 <a class="section-title" role="button" data-toggle="collapse" href="#paddingProperties" aria-expanded="true" aria-controls="gridCollection">
                     <span>Padding</span>
                 </a>
-                <ul id="paddingProperties" class="propertyList">
+                <ul id="paddingProperties" class="stylingList">
                     <div class="form-inline">
                         <label>padding-top</label>
                         <input type="text" class="form-control"></input>
@@ -105,7 +105,7 @@
                 <a class="section-title" role="button" data-toggle="collapse" href="#sizeProperties" aria-expanded="true" aria-controls="gridCollection">
                     <span>Size</span>
                 </a>
-                <ul id="sizeProperties" class="propertyList">
+                <ul id="sizeProperties" class="stylingList">
                     <div class="form-inline">
                         <label>height</label>
                         <input type="text" class="form-control"></input>
@@ -136,7 +136,7 @@
                 <a class="section-title" role="button" data-toggle="collapse" href="#backgroudProperties" aria-expanded="true" aria-controls="gridCollection">
                     <span>Backgroud</span>
                 </a>
-                <ul id="backgroudProperties" class="propertyList">
+                <ul id="backgroudProperties" class="stylingList">
                     <div class="form-inline">
                         <label>bg-image</label>
                         <input type="text" class="form-control"></input>
@@ -163,7 +163,7 @@
                 <a class="section-title" role="button" data-toggle="collapse" href="#textProperties" aria-expanded="true" aria-controls="gridCollection">
                     <span>Text</span>
                 </a>
-                <ul id="textProperties" class="propertyList">
+                <ul id="textProperties" class="stylingList">
                     <div class="form-inline">
                         <label>text-align</label>
                         <input type="text" class="form-control"></input>
@@ -195,20 +195,7 @@
 </template>
 
 <style>
-    .propertyPanel{
-        height: 100%;
-        overflow-x: hidden;
-    }
-    .propertyPanel .propertyList{
-        margin-left: -20px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-    .propertyPanel input{
-        margin-left: 10px;
-        height: 30px;
-        margin-bottom: 10px;
-    }
+
 </style>
 
 <script>
@@ -217,11 +204,5 @@
             return{
             }
         },
-
-        methods:{
-            refreshStylingPanel: function(){
-                alert("aaa");
-            }
-        }
     }
 </script>

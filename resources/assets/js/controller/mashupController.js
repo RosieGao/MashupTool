@@ -35,10 +35,6 @@ $(document).ready(function() {
         $(this).parent().remove();
     });
 
-    $(".canvas").on("click", ".dragButton", function(){
-        refreshStylingPanel();
-    });
-
     $(".canvas").on("click", ".editorButton", function(e){
         e.preventDefault();
         currentEditor = $(this).parent().find('.view');

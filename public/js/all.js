@@ -33,15 +33,10 @@ $(document).ready(function() {
         },
         stop: function (event, ui) {
             ui.helper.removeAttr("style");
+            $(".stylingPanelContainer").empty();
+            $(".stylingPanelContainer").load('../../../StylingPanelInnerHTML.html .stylingPanel');
         }
     });
-
-    // $(".selectComponent").draggable({
-    //     stop: function () {
-    //         $(".propertyPanel").empty();
-    //         $(".propertyPanel").load('/propertyPanelInnerHTML.html #selectPropertyPanel');
-    //     }
-    // });
 });
 
 var currentEditor = null;
@@ -79,10 +74,6 @@ $(document).ready(function() {
 
     $(".canvas").on("click", ".removeButton", function(){
         $(this).parent().remove();
-    });
-
-    $(".canvas").on("click", ".dragButton", function(){
-        refreshStylingPanel();
     });
 
     $(".canvas").on("click", ".editorButton", function(e){

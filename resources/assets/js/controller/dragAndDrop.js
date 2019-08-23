@@ -33,13 +33,8 @@ $(document).ready(function() {
         },
         stop: function (event, ui) {
             ui.helper.removeAttr("style");
+            $(".stylingPanelContainer").empty();
+            $(".stylingPanelContainer").load('../../../StylingPanelInnerHTML.html .stylingPanel');
         }
     });
-
-    // $(".selectComponent").draggable({
-    //     stop: function () {
-    //         $(".propertyPanel").empty();
-    //         $(".propertyPanel").load('/propertyPanelInnerHTML.html #selectPropertyPanel');
-    //     }
-    // });
 });

@@ -63,7 +63,7 @@
                 <div class="canvasContainer col-md-8 col-sm-offset-2">
                     <canvas_component></canvas_component>
                 </div>
-                <div class="propertyPanelContainer col-md-2 col-sm-offset-10">
+                <div class="stylingPanelContainer col-md-2 col-sm-offset-10">
                     <styling_panel_component></styling_panel_component>
                 </div>
             </div>

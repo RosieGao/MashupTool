@@ -3352,7 +3352,7 @@ body{
     top: inherit;
     bottom: 0px;
 }
-.propertyPanelContainer{
+.stylingPanelContainer{
     position: fixed;
     top: inherit;
     bottom: 0px;
@@ -3426,7 +3426,7 @@ body{
 .previewLayout .leftPanelContainer{
     display: none;
 }
-.previewLayout .propertyPanelContainer{
+.previewLayout .stylingPanelContainer{
     display: none;
 }
 .previewLayout .canvasContainer{
@@ -3443,14 +3443,38 @@ body{
 .previewLayout .canvas .dragButton{
     display: none;
 }
-.previewLayout .canvas .editorButton{
-  display: none;
-}
 .previewLayout .canvas .properties{
     display: none;
 }
 .previewLayout .canvas .innerElementProperties{
     display: none;
+}
+
+.stylingPanel{
+    height: 100%;
+    overflow-x: hidden;
+}
+.stylingPanel .stylingList{
+    margin-left: -20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.stylingPanel input{
+    margin-left: 10px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+#editorModal{
+    top: 10%;
+    left: 50%;
+    width: 700px;
+    margin-left: -280px;
+    background-color: #ffffff;
+    border: 1px solid #999;
+    border-radius: 6px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    bottom: auto;
 }
 
 /*# sourceMappingURL=all.css.map */

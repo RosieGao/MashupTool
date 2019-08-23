@@ -6701,16 +6701,15 @@ button.close {
 
 .modal {
   position: fixed;
-  top: 10%;
-  left: 50%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 1050;
-  width: 650px;
-  margin-left: -280px;
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 6px;
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-  background-clip: padding-box;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
 }
 
 .modal.fade .modal-dialog {
