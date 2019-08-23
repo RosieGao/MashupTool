@@ -30,9 +30,7 @@ class ProjectController extends Controller
 
         $relative_path = '/home/rosiegao/Desktop';
         $storage_path = $relative_path.'/'.$name;
-        ECHO $storage_path;
         $cs_file_path = $storage_path.'/'.$name.'.cs';
-        ECHO $cs_file_path;
 
         return \DB::table('projects')->insert(
             [

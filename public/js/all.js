@@ -44,21 +44,12 @@ $(document).ready(function() {
     });
 });
 
-function saveMashup(){
-    $("#savedMashupHtml").html($(".canvas").html());
-    $("#savedMashupHtml").find(".removeButton, .dragButton, .properties, .innerElementProperties, .preview").remove();
-    $("#saveSuccessMsg").show().delay(3000).fadeOut();
-}
-
 $(document).ready(function() {
     $("#mashupMode").on("click", function(){
         $("body").removeClass("previewLayout").addClass("mashupLayout");
     });
     $("#previewMode").on("click", function(){
         $("body").removeClass("mashupLayout").addClass("previewLayout");
-    });
-    $("#save").on("click", function(){
-        saveMashup();
     });
     $("#clear").on("click", function(){
         $(".canvas").empty();
@@ -84,6 +75,29 @@ $(document).ready(function() {
         $(this).parent().remove();
     });
 });
+
+function download(page_name){
+    $("#savedMashupHtml").html($(".canvas").html());
+    $("#savedMashupHtml").find(".removeButton, .dragButton, .properties, .innerElementProperties, .preview").remove();
+    $("#saveSuccessMsg").show().delay(3000).fadeOut();
+    var str = $("#savedMashupHtml").html();
+    var blob = new Blob([
+        "<html>" +
+        "<head>" +
+        "<body>" +
+        str +
+        "</body>" +
+        "</head>" +
+        "</html>"], {type:"text/plain;charset=utf-8"});
+    saveAs(blob, page_name+".html");
+}
+
+function saveHtml(){
+    $("#savedMashupHtml").html($(".canvas").html());
+    $("#savedMashupHtml").find(".removeButton, .dragButton, .properties, .innerElementProperties, .preview").remove();
+    $("#saveSuccessMsg").show().delay(3000).fadeOut();
+    return $("#savedMashupHtml").html();
+}
 
 function toggleAttribute(selector, attr, value){
     if (selector.attr(attr)){

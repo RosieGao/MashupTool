@@ -29,10 +29,18 @@
                                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                                 Preview
                             </button>
-                            <button type="button" class="btn btn-default navbar-btn" id="save">
-                                <p id="saveMashupPath" style="display: none">{{ $storage_path }}</p>
+                            <button type="button" class="btn btn-default navbar-btn" id="save"
+                                    onclick="saveHtml();
+                                            {{ \App\Http\Controllers\PageController::save(
+                                            $storage_path, "aaa"
+                                            ) }}">
                                 <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
                                 Save
+                            </button>
+                            <button type="button" class="btn btn-default navbar-btn" id="download"
+                                    onclick="download('{{ $page_name }}')">
+                                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                                Download
                             </button>
                             <button class="btn btn-default navbar-btn" href="#clear" id="clear">
                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
