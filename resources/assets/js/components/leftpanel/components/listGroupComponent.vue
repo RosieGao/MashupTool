@@ -10,6 +10,9 @@
             <button class="btn btn-default btn-xs" id="listGroupAddDisabledItems" type="submit">Add Disabled Items</button>
             <button class="btn btn-default btn-xs" id="listGroupAddContent" type="submit">Add Custom Content</button>
         </span>
+        <button type="button" class="editorButton" data-toggle="modal" data-target="#editorModal">
+            <i class="fa fa-edit"></i>
+        </button>
         <div class="preview">
             <i class="fa fa-list fa-5x"></i>
             <span>List group</span>

@@ -2,6 +2,9 @@
     <div class="component tabNavbarComponent">
         <span href="#close" class="removeButton"><i class="fa fa-times"></i></span>
         <span href="#close" class="dragButton"><i class="fa fa-arrows"></i></span>
+        <button type="button" class="editorButton" data-toggle="modal" data-target="#editorModal">
+            <i class="fa fa-edit"></i>
+        </button>
         <span class="properties">
             <button class="btn btn-default btn-xs" id="emptyTabNavbar" type="submit">Empty</button>
             <button class="btn btn-default btn-xs" id="tabNavbarAddTabs" type="submit">Add Tabs</button>

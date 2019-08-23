@@ -50,7 +50,7 @@ $(document).ready(function() {
 
 function download(page_name){
     $("#savedMashupHtml").html($(".canvas").html());
-    $("#savedMashupHtml").find(".removeButton, .dragButton, .properties, .innerElementProperties, .preview").remove();
+    $("#savedMashupHtml").find(".removeButton, .dragButton, .editorButton, .properties, .innerElementProperties, .preview").remove();
     $("#saveSuccessMsg").show().delay(3000).fadeOut();
     var str = $("#savedMashupHtml").html();
     var blob = new Blob([
@@ -66,7 +66,7 @@ function download(page_name){
 
 function saveHtml(){
     $("#savedMashupHtml").html($(".canvas").html());
-    $("#savedMashupHtml").find(".removeButton, .dragButton, .properties, .innerElementProperties, .preview").remove();
+    $("#savedMashupHtml").find(".removeButton, .dragButton, .editorButton, .properties, .innerElementProperties, .preview").remove();
     $("#saveSuccessMsg").show().delay(3000).fadeOut();
     return $("#savedMashupHtml").html();
 }

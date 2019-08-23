@@ -2,6 +2,9 @@
     <div class="component">
         <span href="#close" class="removeButton"><i class="fa fa-times"></i></span>
         <span href="#close" class="dragButton"><i class="fa fa-arrows"></i></span>
+        <button type="button" class="editorButton" data-toggle="modal" data-target="#editorModal">
+            <i class="fa fa-edit"></i>
+        </button>
         <div class="preview">
             <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/wait.png">
             <span>Jumbotron</span>

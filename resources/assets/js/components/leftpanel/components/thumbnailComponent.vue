@@ -16,6 +16,9 @@
                 </ul>
             </div>
         </span>
+        <button type="button" class="editorButton" data-toggle="modal" data-target="#editorModal">
+            <i class="fa fa-edit"></i>
+        </button>
         <div class="preview">
             <img src="https://yumeng1-vm.ead.ist.ualberta.ca/MashupTool/images/thumbnails.png">
             <span>Thumbnails</span>

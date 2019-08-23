@@ -18,6 +18,9 @@
                 </ul>
             </div>
         </span>
+        <button type="button" class="editorButton" data-toggle="modal" data-target="#editorModal">
+            <i class="fa fa-edit"></i>
+        </button>
         <div class="preview">
             <i class="fa fa-picture-o fa-5x"></i>
             <span>Images</span>

@@ -2,6 +2,9 @@
     <div class="component">
         <span href="#close" class="removeButton"><i class="fa fa-times"></i></span>
         <span href="#close" class="dragButton"><i class="fa fa-arrows"></i></span>
+        <button type="button" class="editorButton" data-toggle="modal" data-target="#editorModal">
+            <i class="fa fa-edit"></i>
+        </button>
         <span class="properties">
             <button class="btn btn-default btn-xs" id="navbarFixedToTp" type="submit">Fixed to top</button>
             <button class="btn btn-default btn-xs" id="navbarFixedToBottom" type="submit">Fixed to bottom</button>

@@ -3443,6 +3443,9 @@ body{
 .previewLayout .canvas .dragButton{
     display: none;
 }
+.previewLayout .canvas .editorButton{
+  display: none;
+}
 .previewLayout .canvas .properties{
     display: none;
 }
