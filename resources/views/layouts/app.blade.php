@@ -71,12 +71,26 @@
         <div id='savedMashupHtml' class="container-fluid" style="display: none">
         </div>
     </div>
+    <div class="modal fade" id="editorModal" role='dialog' aria-hidden="true">
+        <div class="modal-header">
+            <h4 class="modal-title">Edit Content</h4>
+        </div>
+        <div class="modal-body">
+            <p>
+                <textarea id="contentEditor"></textarea>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" id="saveModalContent" class="btn btn-primary" data-dismiss="modal">Save</button>
+        </div>
+    </div>
     <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/all.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/jquery-ui.min.js') }}"></script>
-    <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.12.1/full/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace( 'editor1' );
+        CKEDITOR.replace('contenteditor');
     </script>
 </body>
 </html>

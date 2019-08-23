@@ -17,6 +17,9 @@
     .canvas .dragButton{
         margin-left: 10px;
     }
+    .canvas .editorButton{
+        margin-left: 10px;
+    }
     .canvas .properties{
         margin-left: 10px;
     }

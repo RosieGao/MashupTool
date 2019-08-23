@@ -93,6 +93,9 @@
     .leftPanel .dragButton{
         display: none;
     }
+    .leftPanel .editorButton{
+        display: none;
+    }
     .leftPanel .properties{
         display: none;
     }

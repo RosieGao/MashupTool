@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+
     $(".canvas, .column").sortable({
         connectWith: ".column",
         opacity: 0.5,

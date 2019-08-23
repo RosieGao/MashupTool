@@ -1,4 +1,10 @@
+var currentEditor = null;
+
 $(document).ready(function() {
+    var contentHandle = CKEDITOR.replace('contentEditor', {
+        language: 'en',
+        allowedContent:true
+    });
     $("#mashupMode").on("click", function(){
         $("body").removeClass("previewLayout").addClass("mashupLayout");
     });
@@ -27,6 +33,18 @@ $(document).ready(function() {
 
     $(".canvas").on("click", ".removeButton", function(){
         $(this).parent().remove();
+    });
+
+    $(".canvas").on("click", ".editorButton", function(e){
+        e.preventDefault();
+        currentEditor = $(this).parent().find('.view');
+        var eText = currentEditor.html();
+        contentHandle.setData(eText);
+    });
+
+    $("#saveModalContent").click(function(e){
+        e.preventDefault();
+        currentEditor.html(contentHandle.getData())
     });
 });
 
