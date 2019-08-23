@@ -19,7 +19,7 @@ import store from './vuex/store';
 import canvas_selector_component from './components/canvasSelectorComponent.vue';
 import canvas_component from './components/canvasComponent.vue';
 import left_panel_component from './components/leftpanel/leftPanelComponent.vue';
-import property_panel_component from './components/propertyPanelComponent.vue';
+import styling_panel_component from './components/StylingPanelComponent.vue';
 
 const app = new Vue({
     el: '#app',
@@ -35,6 +35,6 @@ const app = new Vue({
         canvas_selector_component,
         canvas_component,
         left_panel_component,
-        property_panel_component
+        styling_panel_component
     },
 });

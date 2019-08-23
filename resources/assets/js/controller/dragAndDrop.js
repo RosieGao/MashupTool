@@ -1,6 +1,4 @@
 $(document).ready(function() {
-
-
     $(".canvas, .column").sortable({
         connectWith: ".column",
         opacity: 0.5,
@@ -38,10 +36,10 @@ $(document).ready(function() {
         }
     });
 
-    $(".selectComponent").draggable({
-        stop: function () {
-            $(".propertyPanel").empty();
-            $(".propertyPanel").load('/propertyPanelInnerHTML.html #selectPropertyPanel');
-        }
-    });
+    // $(".selectComponent").draggable({
+    //     stop: function () {
+    //         $(".propertyPanel").empty();
+    //         $(".propertyPanel").load('/propertyPanelInnerHTML.html #selectPropertyPanel');
+    //     }
+    // });
 });

@@ -1,6 +1,4 @@
 $(document).ready(function() {
-
-
     $(".canvas, .column").sortable({
         connectWith: ".column",
         opacity: 0.5,
@@ -38,18 +36,18 @@ $(document).ready(function() {
         }
     });
 
-    $(".selectComponent").draggable({
-        stop: function () {
-            $(".propertyPanel").empty();
-            $(".propertyPanel").load('/propertyPanelInnerHTML.html #selectPropertyPanel');
-        }
-    });
+    // $(".selectComponent").draggable({
+    //     stop: function () {
+    //         $(".propertyPanel").empty();
+    //         $(".propertyPanel").load('/propertyPanelInnerHTML.html #selectPropertyPanel');
+    //     }
+    // });
 });
 
 var currentEditor = null;
 
 $(document).ready(function() {
-    var contentHandle = CKEDITOR.replace('contentEditor', {
+    var contentHandle = CKEDITOR.replace('contenteditor', {
         language: 'en',
         allowedContent:true
     });
@@ -81,6 +79,10 @@ $(document).ready(function() {
 
     $(".canvas").on("click", ".removeButton", function(){
         $(this).parent().remove();
+    });
+
+    $(".canvas").on("click", ".dragButton", function(){
+        refreshStylingPanel();
     });
 
     $(".canvas").on("click", ".editorButton", function(e){

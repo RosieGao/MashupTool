@@ -1,7 +1,7 @@
 var currentEditor = null;
 
 $(document).ready(function() {
-    var contentHandle = CKEDITOR.replace('contentEditor', {
+    var contentHandle = CKEDITOR.replace('contenteditor', {
         language: 'en',
         allowedContent:true
     });
@@ -33,6 +33,10 @@ $(document).ready(function() {
 
     $(".canvas").on("click", ".removeButton", function(){
         $(this).parent().remove();
+    });
+
+    $(".canvas").on("click", ".dragButton", function(){
+        refreshStylingPanel();
     });
 
     $(".canvas").on("click", ".editorButton", function(e){

@@ -64,7 +64,7 @@
                     <canvas_component></canvas_component>
                 </div>
                 <div class="propertyPanelContainer col-md-2 col-sm-offset-10">
-                    <property_panel_component></property_panel_component>
+                    <styling_panel_component></styling_panel_component>
                 </div>
             </div>
         </div>
@@ -77,7 +77,7 @@
         </div>
         <div class="modal-body">
             <p>
-                <textarea id="contentEditor"></textarea>
+                <textarea id="contenteditor"></textarea>
             </p>
         </div>
         <div class="modal-footer">
@@ -89,8 +89,5 @@
     <script type="text/javascript" src="{{ asset('/js/all.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/jquery-ui.min.js') }}"></script>
     <script src="https://cdn.ckeditor.com/4.12.1/full/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace('contenteditor');
-    </script>
 </body>
 </html>
