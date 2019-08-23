@@ -7,6 +7,7 @@
             <span>Headings</span>
         </div>
         <div class="view">
+            <textarea name="editor1"></textarea>
             <h3 contenteditable="true">h3. Bootstrap heading
                 <small contenteditable="true">Secondary text</small>
             </h3>
@@ -20,9 +21,9 @@
 
 <script>
     export default{
-        data(){
-            return{
-            }
-        },
+        data() {
+            return {
+            };
+        }
     }
 </script>

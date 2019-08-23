@@ -74,5 +74,9 @@
     <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/all.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/jquery-ui.min.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'editor1' );
+    </script>
 </body>
 </html>
